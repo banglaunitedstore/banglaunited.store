@@ -1,0 +1,3628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangla United - Welcome to Rabbi Official Store</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Phosphor Icons CDN -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Cinzel:wght@700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyberDark: '#05070e',
+            cyberDarker: '#020408',
+            cyberPanel: '#0b101c',
+            neonPurple: '#a855f7',
+            neonCyan: '#06b6d4',
+            neonGreen: '#10b981',
+            neonPink: '#ec4899',
+            neonAmber: '#f59e0b',
+            neonRose: '#f43f5e'
+          },
+          fontFamily: {
+            display: ['Orbitron', 'sans-serif'],
+            cyber: ['Rajdhani', 'sans-serif'],
+            bengali: ['Hind Siliguri', 'sans-serif'],
+            sans: ['Inter', 'Hind Siliguri', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #05070e;
+      color: #e2e8f0;
+      font-family: 'Rajdhani', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    .glow-btn {
+      background: linear-gradient(135deg, #9333ea, #06b6d4);
+      box-shadow: 0 0 20px rgba(147, 51, 234, 0.45);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glow-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.65);
+    }
+
+    .nav-item-animated {
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    .nav-item-animated::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #a855f7, #06b6d4);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .nav-item-animated:hover::after {
+      width: 80%;
+    }
+    .nav-item-animated:hover {
+      transform: translateY(-1.5px);
+      background: rgba(168, 85, 247, 0.12);
+    }
+    
+    .glow-cape-card {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(168, 85, 247, 0.12), rgba(6, 182, 212, 0.08));
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.18);
+      transition: all 0.4s ease;
+    }
+    .glow-cape-card:hover {
+      box-shadow: 0 0 40px rgba(245, 158, 11, 0.35);
+      border-color: rgba(245, 158, 11, 0.6);
+      transform: translateY(-2px);
+    }
+    .glass-card {
+      background: rgba(11, 16, 28, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(168, 85, 247, 0.45);
+    }
+    .badge-soldout {
+      background: linear-gradient(90deg, #dc2626, #991b1b);
+      box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+    }
+    .cyber-grid-bg {
+      background-size: 36px 36px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #05070e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a855f7;
+    }
+
+    /* Live Delivery Animation CSS */
+    .delivery-viewport {
+      width: 100%;
+      height: 290px;
+      background: linear-gradient(to bottom, #070b19 0%, #172554 65%, #1e1b4b 100%);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid rgba(99, 102, 241, 0.3);
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.7);
+    }
+    .anim-moon {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      width: 38px;
+      height: 38px;
+      background: #fef08a;
+      border-radius: 50%;
+      box-shadow: 0 0 24px #fde047;
+    }
+    .anim-road {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      background: #0f172a;
+      border-top: 4px solid #475569;
+    }
+    .anim-stripes {
+      position: absolute;
+      top: 50%;
+      width: 200%;
+      height: 5px;
+      background: repeating-linear-gradient(90deg, #facc15 0, #facc15 35px, transparent 35px, transparent 70px);
+      transform: translateY(-50%);
+    }
+    .anim-stripes.drive {
+      animation: driveRoadAnim 0.5s linear infinite;
+    }
+    @keyframes driveRoadAnim {
+      0% { transform: translate(0, -50%); }
+      100% { transform: translate(-70px, -50%); }
+    }
+    .anim-pack-area {
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 5;
+    }
+    .anim-item-drop {
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      border: 2px solid #67e8f9;
+      border-radius: 8px;
+      box-shadow: 0 0 16px #06b6d4;
+      top: -120px;
+      opacity: 0;
+    }
+    .anim-item-drop.falling {
+      animation: dropItemAnim 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+    }
+    @keyframes dropItemAnim {
+      0% { top: -120px; opacity: 1; transform: scale(1.1) rotate(0deg); }
+      70% { top: 35px; opacity: 1; transform: scale(1) rotate(50deg); }
+      100% { top: 55px; opacity: 0; transform: scale(0.4) rotate(0deg); }
+    }
+    .anim-box {
+      width: 75px;
+      height: 60px;
+      background: #b45309;
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      transition: all 0.5s ease;
+    }
+    .anim-flap-l, .anim-flap-r {
+      position: absolute;
+      top: -14px;
+      width: 37px;
+      height: 14px;
+      background: #92400e;
+      transform-origin: bottom;
+      transition: transform 0.4s ease;
+    }
+    .anim-flap-l { left: 0; border-radius: 4px 0 0 0; transform: rotate(-135deg); }
+    .anim-flap-r { right: 0; border-radius: 0 4px 0 0; transform: rotate(135deg); }
+    .anim-box.closed .anim-flap-l, .anim-box.closed .anim-flap-r { transform: rotate(0deg); }
+    .anim-tape {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, #fef08a, #fde047);
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px rgba(253, 224, 71, 0.6);
+      transition: width 0.4s ease;
+    }
+    .anim-box.taped .anim-tape { width: 20px; }
+    
+    .anim-truck {
+      position: absolute;
+      bottom: 56px;
+      left: -240px;
+      width: 175px;
+      height: 95px;
+      z-index: 10;
+      transition: left 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .anim-truck.bouncing {
+      animation: truckBounceAnim 0.35s ease-in-out infinite alternate;
+    }
+    @keyframes truckBounceAnim {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-3px); }
+    }
+    .anim-cargo {
+      position: absolute;
+      left: 0;
+      bottom: 12px;
+      width: 115px;
+      height: 68px;
+      background: linear-gradient(135deg, #4f46e5, #312e81);
+      border-radius: 8px 0 0 6px;
+      border: 2px solid #6366f1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 8px;
+    }
+    .anim-cargo-text-main {
+      font-size: 11px;
+      font-weight: 900;
+      color: #38bdf8;
+      letter-spacing: 1px;
+      line-height: 1.1;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .anim-cargo-text-sub {
+      font-size: 8px;
+      font-weight: 700;
+      color: #facc15;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+    .anim-truck-door {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #1e1b4b;
+      border-left: 2px dashed #818cf8;
+      transition: transform 0.4s ease;
+    }
+    .anim-truck-door.open { transform: translateX(-100%); }
+    .anim-cabin {
+      position: absolute;
+      right: 5px;
+      bottom: 12px;
+      width: 55px;
+      height: 52px;
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      border-radius: 0 16px 6px 0;
+      border: 2px solid #38bdf8;
+    }
+    .anim-window {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 24px;
+      height: 20px;
+      background: linear-gradient(135deg, #bae6fd, #7dd3fc);
+      border-radius: 0 10px 0 0;
+    }
+    .anim-headlight {
+      position: absolute;
+      bottom: 18px;
+      right: -3px;
+      width: 9px;
+      height: 9px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #38bdf8;
+    }
+    .anim-light-beam {
+      position: absolute;
+      top: -12px;
+      left: 6px;
+      width: 110px;
+      height: 38px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), transparent);
+      clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 70%);
+      pointer-events: none;
+    }
+    .anim-wheel {
+      position: absolute;
+      bottom: 2px;
+      width: 26px;
+      height: 26px;
+      background: #020617;
+      border: 4px solid #64748b;
+      border-radius: 50%;
+    }
+    .anim-wheel.front { right: 14px; }
+    .anim-wheel.back { left: 16px; }
+    .bouncing .anim-wheel {
+      animation: spinWheelAnim 0.3s linear infinite;
+    }
+    @keyframes spinWheelAnim {
+      100% { transform: rotate(360deg); }
+    }
+    .anim-house {
+      position: absolute;
+      bottom: 70px;
+      right: -170px;
+      width: 110px;
+      height: 100px;
+      transition: right 1.1s cubic-bezier(0.25, 1, 0.5, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 4;
+    }
+    .anim-roof {
+      width: 0;
+      height: 0;
+      border-left: 60px solid transparent;
+      border-right: 60px solid transparent;
+      border-bottom: 40px solid #f43f5e;
+    }
+    .anim-building {
+      width: 95px;
+      height: 60px;
+      background: #f8fafc;
+      border: 2px solid #cbd5e1;
+      border-radius: 4px;
+      position: relative;
+    }
+    .anim-door {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 26px;
+      height: 38px;
+      background: #78350f;
+      border-radius: 5px 5px 0 0;
+    }
+    .anim-window-house {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      width: 16px;
+      height: 16px;
+      background: #fef08a;
+      border-radius: 3px;
+      box-shadow: 0 0 8px #fde047;
+    }
+    .anim-delivered-parcel {
+      position: absolute;
+      bottom: 70px;
+      width: 34px;
+      height: 28px;
+      background: #b45309;
+      border: 2px solid #fef08a;
+      border-radius: 5px;
+      display: none;
+      z-index: 6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    /* ENTRY WELCOME OVERLAY */
+    #siteEntryWelcomeOverlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: radial-gradient(ellipse at center, #0a0418 0%, #030108 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s ease;
+    }
+
+    #siteEntryWelcomeOverlay.hide-welcome {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    #welcomeGalaxyCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .welcome-celestial {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 340px;
+      height: 340px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .celestial-moon-core {
+      position: absolute;
+      inset: 30px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.95), rgba(192, 132, 252, 0.65) 40%, rgba(126, 34, 206, 0.25) 75%, transparent 100%);
+      box-shadow: 0 0 70px rgba(168, 85, 247, 0.55);
+      filter: blur(3px);
+      animation: moonPulseBreathe 6s ease-in-out infinite alternate;
+    }
+
+    .celestial-orbit-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1.5px solid rgba(192, 132, 252, 0.35);
+      box-shadow: 0 0 45px rgba(168, 85, 247, 0.4);
+      animation: ringOrbitExpand 8s infinite linear;
+    }
+
+    .celestial-outer-dashed {
+      position: absolute;
+      inset: -25px;
+      border-radius: 50%;
+      border: 1px dashed rgba(56, 189, 248, 0.28);
+      animation: ringSpinSlow 22s infinite linear;
+    }
+
+    @keyframes moonPulseBreathe {
+      0% { transform: scale(0.95); opacity: 0.75; }
+      100% { transform: scale(1.06); opacity: 1; }
+    }
+
+    @keyframes ringOrbitExpand {
+      0% { transform: scale(0.9) rotate(0deg); opacity: 0.3; }
+      50% { opacity: 0.7; }
+      100% { transform: scale(1.15) rotate(180deg); opacity: 0.3; }
+    }
+
+    @keyframes ringSpinSlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .welcome-center-box {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 700px;
+      background: rgba(6, 4, 15, 0.84);
+      backdrop-filter: blur(28px);
+      border-radius: 28px;
+      padding: 45px 30px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), inset 0 0 30px rgba(147, 51, 234, 0.2);
+    }
+
+    .welcome-letter-item {
+      display: inline-block;
+      white-space: pre;
+      animation: welcomeLetterWave 2.2s ease-in-out infinite;
+    }
+
+    @keyframes welcomeLetterWave {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    .w-title-font {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      font-weight: 900;
+      margin: 0 0 18px 0;
+      min-height: 46px;
+      letter-spacing: 3px;
+      line-height: 1.3;
+    }
+
+    .w-founder-pill {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 8px 24px;
+      border-radius: 50px;
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.12), rgba(217, 70, 239, 0.12));
+      border: 1.5px solid rgba(245, 158, 11, 0.55);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
+      min-height: 38px;
+    }
+
+    .w-founder-font {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .w-desc-font {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 21px;
+      font-weight: 700;
+      margin: 0;
+      min-height: 32px;
+      letter-spacing: 1.5px;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .welcome-beacon-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #38bdf8;
+      vertical-align: middle;
+      margin-left: 6px;
+      box-shadow: 0 0 12px #38bdf8;
+      animation: beaconFlash 0.6s infinite;
+    }
+
+    @keyframes beaconFlash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* MINECRAFT SMP BOX STYLES */
+    .smp-box-glow {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(6, 182, 212, 0.12), rgba(168, 85, 247, 0.08));
+      border: 1.5px solid rgba(16, 185, 129, 0.4);
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+    }
+    .smp-box-glow:hover {
+      border-color: rgba(16, 185, 129, 0.65);
+      box-shadow: 0 0 45px rgba(16, 185, 129, 0.35);
+    }
+
+    @media (max-width: 650px) {
+      .w-title-font { font-size: 21px; }
+      .w-founder-font { font-size: 12px; }
+      .w-desc-font { font-size: 16px; }
+      .welcome-center-box { padding: 30px 16px; }
+      .welcome-celestial { width: 220px; height: 220px; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col cyber-grid-bg antialiased selection:bg-purple-600 selection:text-white">
+
+  <!-- ENTRY WELCOME SCREEN OVERLAY -->
+  <div id="siteEntryWelcomeOverlay">
+    <canvas id="welcomeGalaxyCanvas"></canvas>
+
+    <div class="welcome-celestial">
+      <div class="celestial-moon-core"></div>
+      <div class="celestial-orbit-ring"></div>
+      <div class="celestial-outer-dashed"></div>
+    </div>
+
+    <div class="welcome-center-box">
+      <h1 class="w-title-font" id="welcomeTextLine1"></h1>
+      <div class="w-founder-pill">
+        <span class="w-founder-font" id="welcomeTextLine2"></span>
+      </div>
+      <p class="w-desc-font" id="welcomeTextLine3"></p>
+    </div>
+  </div>
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-purple-950 via-slate-900 to-cyan-950 border-b border-purple-500/20 py-1.5 px-4 text-center text-xs tracking-wider font-semibold text-cyan-300 flex items-center justify-center gap-2">
+    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+    <span id="announcementTextEl" data-i18n="announcementText">BANGLA UNITED - WELCOME TO RABBI OFFICIAL STORE | DISCORD NITRO, MINECRAFT FULL ACCESS, CAPES & NETFLIX 100% INSTANT DELIVERY</span>
+  </div>
+
+  <!-- NAVBAR HEADER -->
+  <header class="sticky top-0 z-40 bg-[#05070e]/95 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
+      
+      <!-- LOGO & BRAND (SECRET TRIGGER: 5 CLICKS TO OPEN OWNER LOGIN) -->
+      <div id="brandLogoTrigger" onclick="handleBrandLogoClick()" class="cursor-pointer flex items-center gap-3 select-none shrink-0 group" title="Bangla United (Secret: Click 5 times for Admin)">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-600 via-indigo-600 to-cyan-500 flex items-center justify-center text-white text-2xl shadow-lg shadow-purple-900/40 border border-purple-400/30 shrink-0 group-hover:scale-105 transition-transform duration-300">
+          <i class="ph-bold ph-cube"></i>
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-display tracking-widest leading-none">
+            <span class="font-normal text-slate-300">BANGLA</span> 
+            <span class="font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-300 to-white drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]">UNITED</span>
+          </h1>
+          <p class="text-[11px] sm:text-xs text-amber-400 font-semibold tracking-wide mt-1 flex items-center gap-1.5 font-cyber">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+            <span data-i18n="brandSubtitle">Welcome to Rabbi Official Store</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- DESKTOP NAVIGATION TABS -->
+      <nav class="hidden lg:flex items-center gap-1.5 bg-slate-950/80 p-1.5 rounded-2xl border border-slate-800 shadow-inner">
+        <button onclick="navigateTo('stock')" id="navBtn-stock" class="nav-item nav-item-animated px-3.5 py-2 rounded-xl text-sm font-bold tracking-wide text-white bg-purple-600 shadow-md">
+          <i class="ph-bold ph-squares-four mr-1.5"></i> <span data-i18n="navStock">Stock & Price List</span>
+        </button>
+        <button onclick="navigateTo('cape')" id="navBtn-cape" class="nav-item nav-item-animated px-3.5 py-2 rounded-xl text-sm font-bold tracking-wide text-amber-400 hover:text-white">
+          <i class="ph-bold ph-cube mr-1 text-amber-400"></i> <span data-i18n="navCape">Minecraft Cape</span>
+        </button>
+        <button onclick="navigateTo('order')" id="navBtn-order" class="nav-item nav-item-animated px-3.5 py-2 rounded-xl text-sm font-bold tracking-wide text-slate-300 hover:text-white">
+          <i class="ph-bold ph-shopping-cart-simple mr-1.5 text-amber-400"></i> <span data-i18n="navOrder">Order Page</span>
+        </button>
+        <button onclick="navigateTo('rules')" id="navBtn-rules" class="nav-item nav-item-animated px-3.5 py-2 rounded-xl text-sm font-bold tracking-wide text-slate-300 hover:text-white">
+          <i class="ph-bold ph-book-open-text mr-1.5 text-cyan-400"></i> <span data-i18n="navRules">Order Niyom</span>
+        </button>
+        <button onclick="navigateTo('reviews')" id="navBtn-reviews" class="nav-item nav-item-animated px-3.5 py-2 rounded-xl text-sm font-bold tracking-wide text-slate-300 hover:text-white">
+          <i class="ph-fill ph-star mr-1.5 text-amber-400"></i> <span data-i18n="navReviews">Reviews</span>
+        </button>
+        <button onclick="navigateTo('me')" id="navBtn-me" class="nav-item nav-item-animated px-3.5 py-2 rounded-xl text-sm font-bold tracking-wide text-cyan-300 hover:text-white border border-cyan-500/30 bg-cyan-950/30">
+          <i class="ph-bold ph-user mr-1 text-cyan-300"></i> <span data-i18n="navMe">Me</span>
+        </button>
+      </nav>
+
+      <!-- RIGHT ACTIONS -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="flex items-center p-1 rounded-xl bg-slate-950 border border-slate-700/80 shadow-inner">
+          <button 
+            id="langBtn-banglish"
+            onclick="setLanguage('banglish')" 
+            class="px-2.5 py-1 sm:px-3 sm:py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 text-white bg-purple-600 shadow"
+            title="Banglish Mode"
+          >
+            <span>🔤</span>
+            <span class="hidden sm:inline">Banglish</span>
+          </button>
+          <button 
+            id="langBtn-bangla"
+            onclick="setLanguage('bangla')" 
+            class="px-2.5 py-1 sm:px-3 sm:py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 text-slate-400 hover:text-white"
+            title="বাংলা ভাষা"
+          >
+            <span>🇧🇩</span>
+            <span class="hidden sm:inline">বাংলা</span>
+          </button>
+        </div>
+
+        <a href="https://wa.me/8801893188969?text=Hello%20Bangla%20United%20Rabbi%20Store%20Help%20Lagbe" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-950/70 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-900 text-xs font-bold transition-all">
+          <i class="ph-bold ph-whatsapp-logo text-base text-emerald-400"></i>
+          <span class="hidden sm:inline" data-i18n="btnHelp">Help</span>
+          <span class="sm:hidden">Help</span>
+        </a>
+
+        <button id="headerLogoutBtn" onclick="handleAdminLogout()" class="hidden px-2.5 py-1.5 rounded-xl bg-rose-950/80 border border-rose-500/50 text-rose-300 hover:text-white text-xs font-bold" title="Logout Owner Mode">
+          <i class="ph-bold ph-sign-out mr-1"></i>
+          <span class="hidden sm:inline">Logout Owner</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE NAVIGATION -->
+    <div class="lg:hidden border-t border-slate-800/80 px-2 py-2 flex items-center justify-around bg-slate-950 text-xs font-bold">
+      <button onclick="navigateTo('stock')" id="mNavBtn-stock" class="p-1.5 rounded-lg text-purple-400 flex flex-col items-center">
+        <i class="ph-bold ph-squares-four text-lg"></i>
+        <span data-i18n="mNavStock">Stock</span>
+      </button>
+      <button onclick="navigateTo('cape')" id="mNavBtn-cape" class="p-1.5 rounded-lg text-slate-400 flex flex-col items-center">
+        <i class="ph-bold ph-cube text-lg text-amber-400"></i>
+        <span data-i18n="mNavCape">Cape</span>
+      </button>
+      <button onclick="navigateTo('order')" id="mNavBtn-order" class="p-1.5 rounded-lg text-slate-400 flex flex-col items-center">
+        <i class="ph-bold ph-shopping-cart text-lg text-amber-400"></i>
+        <span data-i18n="mNavOrder">Order</span>
+      </button>
+      <button onclick="navigateTo('me')" id="mNavBtn-me" class="p-1.5 rounded-lg text-cyan-400 flex flex-col items-center">
+        <i class="ph-bold ph-user text-lg"></i>
+        <span data-i18n="mNavMe">Me</span>
+      </button>
+      <button onclick="navigateTo('rules')" id="mNavBtn-rules" class="p-1.5 rounded-lg text-slate-400 flex flex-col items-center">
+        <i class="ph-bold ph-book-open text-lg text-cyan-400"></i>
+        <span data-i18n="mNavRules">Niyom</span>
+      </button>
+      <button onclick="navigateTo('reviews')" id="mNavBtn-reviews" class="p-1.5 rounded-lg text-slate-400 flex flex-col items-center">
+        <i class="ph-fill ph-star text-lg text-amber-400"></i>
+        <span data-i18n="mNavReviews">Reviews</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="flex-grow">
+    
+    <!-- PAGE 1: STOCK & PRICE LIST -->
+    <section id="page-stock" class="page-view max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      <!-- HERO BANNER -->
+      <div class="relative rounded-3xl p-6 sm:p-10 mb-8 overflow-hidden glass-card border border-purple-500/30 shadow-2xl">
+        <div class="absolute -right-10 -top-10 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-10 -bottom-10 w-64 h-64 bg-cyan-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="relative z-10 max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-900/60 border border-purple-500/40 text-purple-300 text-xs uppercase tracking-wider mb-4 font-bold">
+            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+            <span data-i18n="heroBadge">Bangla United • Rabbi Official Store</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight leading-tight mb-3">
+            <span data-i18n="heroTitleStart">AMADER LIVE</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-amber-300" data-i18n="heroTitleEnd">STOCK & PRICE</span>
+          </h2>
+          
+          <p class="text-slate-300 text-sm sm:text-base tracking-wide leading-relaxed mb-6" data-i18n="heroDesc">
+            Rabbi Official Store-e apnake swagotom! Nicher list theke apnar pochondo moto product check korun. Stock thakle shorashori "Order Korun" batone chap diye 2 minute e order confirm koren!
+          </p>
+
+          <button onclick="navigateTo('order')" class="glow-btn px-6 sm:px-8 py-3.5 rounded-2xl text-white font-extrabold text-sm sm:text-base tracking-wider flex items-center gap-3">
+            <i class="ph-bold ph-shopping-cart-simple text-xl"></i>
+            <span data-i18n="heroActionBtn">ORDER KORAR JONNO EIKHANE CHAP DIN ➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- =========================================
+           MY SMP IP BOX (WITH COPY BUTTON & RULES)
+           ========================================= -->
+      <div class="mb-8 rounded-3xl p-6 sm:p-7 smp-box-glow relative overflow-hidden backdrop-blur-xl">
+        <div class="absolute -right-10 -bottom-10 w-52 h-52 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-10 -top-10 w-52 h-52 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-5 border-b border-emerald-500/25">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-600 to-slate-950 border-2 border-emerald-400/50 shadow-lg shadow-emerald-900/40 flex items-center justify-center text-emerald-300 text-3xl shrink-0">
+                <i class="ph-bold ph-cube animate-pulse"></i>
+              </div>
+              <div>
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold uppercase tracking-wider mb-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span id="smpBoxBadgeText">Rabbi Official Minecraft SMP</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-black font-display text-white tracking-wide flex items-center gap-2">
+                  <span>MY SMP IP</span>
+                  <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-md bg-emerald-950 text-emerald-300 border border-emerald-600/40" id="smpStatusDisplay">24/7 ONLINE</span>
+                </h3>
+              </div>
+            </div>
+
+            <!-- Copy Box Area -->
+            <div class="w-full lg:w-auto">
+              <div class="text-[11px] font-bold text-slate-300 mb-1.5 flex items-center justify-between">
+                <span class="text-emerald-400 font-mono">Server IP (Java & Bedrock):</span>
+                <span class="text-[10px] text-slate-400">* Click button to copy</span>
+              </div>
+              <div class="flex items-center gap-2 bg-slate-950/90 border border-emerald-500/40 p-1.5 rounded-2xl shadow-inner max-w-md">
+                <div class="px-3 py-1.5 font-mono text-xs sm:text-sm font-black text-cyan-300 select-all truncate" id="smpDisplayIpText">
+                  play.banglaunited.com
+                </div>
+                <button onclick="copySmpServerIp()" class="ml-auto px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-black text-xs flex items-center gap-1.5 transition-all shadow-md active:scale-95 shrink-0">
+                  <i class="ph-bold ph-copy text-sm" id="smpCopyBtnIcon"></i>
+                  <span id="smpCopyBtnText">Copy IP</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Friendly Community Rules (Banglish) -->
+          <div class="pt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+            <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800 flex items-start gap-2.5">
+              <i class="ph-bold ph-heart text-emerald-400 text-base shrink-0 mt-0.5"></i>
+              <div>
+                <b class="text-emerald-300 block mb-0.5">Friendly Community:</b>
+                <span class="text-slate-300 leading-relaxed text-[11px]">Shobai shobaike respect korben. Kono rokom vulgar ba kharap bhasha use kora jabe na.</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800 flex items-start gap-2.5">
+              <i class="ph-bold ph-shield-check text-cyan-400 text-base shrink-0 mt-0.5"></i>
+              <div>
+                <b class="text-cyan-300 block mb-0.5">No Griefing & Stealing:</b>
+                <span class="text-slate-300 leading-relaxed text-[11px]">Onner build ba base noshto korben na ebong onner chest theke churi kora pura nishedh.</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800 flex items-start gap-2.5">
+              <i class="ph-bold ph-hand-fist text-amber-400 text-base shrink-0 mt-0.5"></i>
+              <div>
+                <b class="text-amber-300 block mb-0.5">Fair Play & No Hacks:</b>
+                <span class="text-slate-300 leading-relaxed text-[11px]">X-Ray ba kono rokom cheat/hack use korle permanent ban kora hobe. Enjoy & have fun!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DYNAMIC CATEGORY TABS -->
+      <div class="flex items-center justify-between flex-wrap gap-4 mb-6">
+        <div class="flex items-center gap-2 overflow-x-auto pb-2" id="categoryFilterContainer"></div>
+        <div class="text-xs text-slate-400 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span id="stockTotalCountInfo">Live Items: 0 Products</span>
+        </div>
+      </div>
+
+      <!-- PRODUCT CARDS GRID -->
+      <div id="stockGridCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      <!-- MINECRAFT CAPE SPECIAL GORGEOUS BOX -->
+      <div class="mt-10 p-6 sm:p-8 rounded-3xl glow-cape-card border border-amber-500/40 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-10 -top-10 w-44 h-44 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4 sm:gap-6 text-center md:text-left flex-col md:flex-row">
+            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-500 via-amber-700 to-slate-950 border-2 border-amber-400/60 shadow-xl shadow-amber-900/40 flex items-center justify-center text-amber-300 text-4xl shrink-0">
+              <i class="ph-fill ph-cube animate-pulse"></i>
+            </div>
+            <div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[11px] font-bold uppercase tracking-wider mb-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+                <span data-i18n="capeBoxBadge">Exclusive Cape Department</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-black font-display text-white tracking-wide">
+                <span data-i18n="capeBoxTitle">MINECRAFT CAPE (10 SLOTS)</span>
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl leading-relaxed" data-i18n="capeBoxDesc">
+                Minecraft exclusive cape kinte chan? Stock update holei direct eikhane shob cape show korbe. Instant delivery and 100% safe.
+              </p>
+            </div>
+          </div>
+
+          <button onclick="navigateTo('cape')" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-purple-600 text-white font-extrabold text-sm hover:opacity-95 transition-all shadow-xl shadow-amber-600/30 flex items-center gap-2 whitespace-nowrap">
+            <i class="ph-bold ph-cube text-lg"></i>
+            <span data-i18n="capeBoxBtn">MINECRAFT CAPE PAGE ➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- BOTTOM BANNER REDIRECT -->
+      <div class="mt-8 p-6 rounded-3xl glass-card border border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h3 class="text-lg font-bold font-display text-cyan-300" data-i18n="stockBottomHeading">Kon product pochondo hoise?</h3>
+          <p class="text-xs text-slate-300" data-i18n="stockBottomSub">Ekhoni niche "Order Korun" chapun ebong form puron kore WhatsApp e delivery bujhe nin.</p>
+        </div>
+        <button onclick="navigateTo('order')" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-purple-600 text-white font-bold text-sm hover:opacity-90 transition-all whitespace-nowrap shadow-lg">
+          <span data-i18n="stockBottomBtn">Order Page-e Jaan ➔</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- PAGE: MINECRAFT CAPE DEDICATED VIEW (10 SLOTS) -->
+    <section id="page-cape" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="relative rounded-3xl p-6 sm:p-10 mb-8 overflow-hidden glass-card border border-amber-500/40 shadow-2xl bg-gradient-to-br from-amber-950/40 via-slate-900 to-purple-950/50">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs uppercase tracking-wider mb-4 font-bold">
+            <i class="ph-bold ph-cube text-amber-400 text-sm"></i> 
+            <span data-i18n="capeHeroBadge">Minecraft Exclusive Capes Section</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight leading-tight mb-3">
+            MINECRAFT <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-rose-400 to-purple-400" data-i18n="capeHeroTitle">EXCLUSIVE CAPES</span>
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base tracking-wide leading-relaxed mb-6" data-i18n="capeHeroDesc">
+            Rabbi Official Store-e Minecraft Cape collection! Jokhon-i notun cape-er stock ashbe, ekhane protiti slot-e naam, live daam ebong direct order option paben. 100% Instant Delivery ebong Official Guarantee!
+          </p>
+          <div class="flex items-center gap-3 flex-wrap">
+            <button onclick="navigateTo('order')" class="px-6 py-3 rounded-xl glow-btn text-white font-bold text-xs" data-i18n="capeToOrderBtn">
+              Order Page-e Jaan ➔
+            </button>
+            <button onclick="navigateTo('stock')" class="px-6 py-3 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-bold text-xs" data-i18n="capeToStockBtn">
+              Shob Products Dekhun
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-6 flex items-center justify-between flex-wrap gap-2">
+        <h3 class="text-base font-bold font-display text-amber-300 flex items-center gap-2">
+          <i class="ph-bold ph-cube text-amber-400"></i> 
+          <span data-i18n="capeSlotsHeading">Minecraft Cape Slot Talika (10 Ti Slot)</span>
+        </h3>
+        <span class="text-xs text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800" id="capeLiveStockCountText">
+          Stock Ache: 0 Ti Cape
+        </span>
+      </div>
+
+      <div id="capeSlotsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+    </section>
+
+    <!-- PAGE 2: ORDER PAGE -->
+    <section id="page-order" class="page-view hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="text-center mb-8">
+        <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-500/10 border border-amber-500/30 text-amber-400 uppercase tracking-wider" data-i18n="orderBadge">
+          Bangla United Instant Order Form
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black font-display text-white mt-2">
+          <span data-i18n="orderTitle">ORDER PAGE</span> <span class="text-purple-400" data-i18n="orderTitleSub">(CONFIRM KORUN)</span>
+        </h2>
+        <p class="text-slate-400 text-sm mt-1" data-i18n="orderSubtitle">
+          Nicher product select korun ebong apnar Name, WhatsApp & Bkash information diye order submit koren.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold font-display text-purple-300 uppercase tracking-wider flex items-center gap-2">
+              <span class="w-6 h-6 rounded-lg bg-purple-600 text-white text-xs flex items-center justify-center font-mono">1</span>
+              <span data-i18n="stepSelectProduct">Product Select Korun</span>
+            </h3>
+            <span class="text-[11px] text-slate-400" data-i18n="stepSelectProductHint">* Ghorer upor click korun</span>
+          </div>
+
+          <div id="orderProductSelectList" class="space-y-3"></div>
+
+          <!-- Summary Box -->
+          <div class="p-4 rounded-2xl bg-[#090e1a] border border-slate-800 space-y-2">
+            <div class="flex justify-between text-xs text-slate-400">
+              <span data-i18n="summaryItemLabel">Selected Item:</span>
+              <span id="summarySelectedTitle" class="font-bold text-white text-right">None Selected</span>
+            </div>
+            <div class="flex justify-between text-xs text-slate-400">
+              <span data-i18n="summaryUnitLabel">Per Unit Price:</span>
+              <span id="summaryUnitPrice" class="font-mono text-cyan-300">৳ 0</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-slate-800">
+              <span class="text-xs font-bold text-slate-300" data-i18n="summaryQtyLabel">Quantity (Koyti Lagbe):</span>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="adjustOrderQuantity(-1)" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold flex items-center justify-center">-</button>
+                <span id="orderQuantityDisplay" class="font-mono font-bold text-white px-2 text-sm">1</span>
+                <button type="button" onclick="adjustOrderQuantity(1)" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold flex items-center justify-center">+</button>
+              </div>
+            </div>
+            <div class="flex justify-between text-sm font-bold text-white pt-2 border-t border-slate-800">
+              <span class="text-amber-400" data-i18n="summaryTotalBillLabel">Total Bill (Shobshakulle):</span>
+              <span id="summaryTotalBill" class="font-mono text-amber-400 text-base font-extrabold">৳ 0</span>
+            </div>
+          </div>
+
+          <!-- Payment Notice -->
+          <div class="p-4 rounded-2xl bg-purple-950/30 border border-purple-600/40 text-xs space-y-2">
+            <div class="font-bold text-purple-200 flex items-center gap-1.5">
+              <i class="ph-bold ph-wallet text-amber-400 text-base"></i>
+              <span data-i18n="paymentNoticeHeading">AMADER PAYMENT NUMBER (SEND MONEY / PERSONAL):</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-[11px] pt-1">
+              <div class="p-2 rounded-xl bg-slate-900/90 border border-pink-500/30">
+                <span class="text-pink-400 font-bold block">bKash (Personal):</span>
+                <span class="font-mono font-bold text-white text-xs">01811-000000</span>
+              </div>
+              <div class="p-2 rounded-xl bg-slate-900/90 border border-orange-500/30">
+                <span class="text-orange-400 font-bold block">Nagad (Personal):</span>
+                <span class="font-mono font-bold text-white text-xs">01811-000000</span>
+              </div>
+            </div>
+            <p class="text-[10px] text-slate-400" data-i18n="paymentNoticeHint">
+              * Taka pathanor por apnar number-er Last 4 Digits ebong koto taka pathaisen ta daan pasher form-e likhun.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT FORM -->
+        <div class="lg:col-span-6">
+          <div class="glass-card rounded-3xl p-6 border border-purple-500/30 shadow-2xl">
+            <h3 class="text-sm font-bold font-display text-cyan-300 uppercase tracking-wider flex items-center gap-2 mb-4">
+              <span class="w-6 h-6 rounded-lg bg-cyan-600 text-white text-xs flex items-center justify-center font-mono">2</span>
+              <span data-i18n="stepCustomerInfo">Apnar Information & Payment Din</span>
+            </h3>
+
+            <form id="customerOrderForm" onsubmit="handleCustomerOrderSubmit(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="labelCustName">
+                  Apnar Name (Kastomer er Naam) *
+                </label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                    <i class="ph-bold ph-user"></i>
+                  </span>
+                  <input type="text" id="custName" required placeholder="Udahoron: Rahim Ahmed" class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-9 pr-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-emerald-400 mb-1" data-i18n="labelCustWhatsApp">
+                  WhatsApp Number (Jekhane Delivery Pathabo) *
+                </label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-emerald-400">
+                    <i class="ph-bold ph-whatsapp-logo"></i>
+                  </span>
+                  <input type="text" id="custWhatsApp" required placeholder="017xxxxxxxx ba 018xxxxxxxx" class="w-full bg-slate-950 border border-emerald-500/40 rounded-xl pl-9 pr-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-mono">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="labelCustDiscord">
+                  Discord Username (Jodi thake)
+                </label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-indigo-400">
+                    <i class="ph-bold ph-discord-logo"></i>
+                  </span>
+                  <input type="text" id="custDiscord" placeholder="Udahoron: rahim_gamer#0000" class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-9 pr-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="labelPayMethod">
+                  Kisher maddhome taka pathaisen? *
+                </label>
+                <div class="grid grid-cols-3 gap-2">
+                  <label class="cursor-pointer">
+                    <input type="radio" name="paymentMethod" value="bKash" checked class="peer sr-only">
+                    <div class="p-2 rounded-xl text-center text-xs font-bold border border-slate-700 bg-slate-950 peer-checked:border-pink-500 peer-checked:bg-pink-950/30 text-slate-300 peer-checked:text-pink-400 transition-all">
+                      bKash
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="paymentMethod" value="Nagad" class="peer sr-only">
+                    <div class="p-2 rounded-xl text-center text-xs font-bold border border-slate-700 bg-slate-950 peer-checked:border-orange-500 peer-checked:bg-orange-950/30 text-slate-300 peer-checked:text-orange-400 transition-all">
+                      Nagad
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="paymentMethod" value="Rocket" class="peer sr-only">
+                    <div class="p-2 rounded-xl text-center text-xs font-bold border border-slate-700 bg-slate-950 peer-checked:border-purple-500 peer-checked:bg-purple-950/30 text-slate-300 peer-checked:text-purple-400 transition-all">
+                      Rocket
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-bold text-pink-300 mb-1" data-i18n="labelLastDigits">
+                    Sender Last 4 Digits *
+                  </label>
+                  <input type="text" id="custLastDigits" maxlength="6" required placeholder="8492" class="w-full bg-slate-950 border border-pink-500/50 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-pink-400 font-mono">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-amber-300 mb-1" data-i18n="labelPaidAmount">
+                    Apni Koto Taka Pathaisen? *
+                  </label>
+                  <input type="number" id="custAmountPaid" required placeholder="420" class="w-full bg-slate-950 border border-amber-500/50 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 font-mono font-bold">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="labelNote">
+                  Extra Message / Note (Optional)
+                </label>
+                <input type="text" id="custExtraNote" placeholder="Minecraft username ba onno kono note" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" id="submitOrderBtn" class="glow-btn w-full py-3.5 rounded-xl text-white font-extrabold text-sm tracking-wider flex items-center justify-center gap-2 shadow-xl">
+                  <i class="ph-bold ph-paper-plane-tilt text-lg"></i>
+                  <span data-i18n="btnSubmitOrder">ORDER CONFIRM KORUN & SUBMIT DIN</span>
+                </button>
+                <p class="text-[11px] text-center text-slate-400 mt-2" data-i18n="submitOrderNote">
+                  ✓ Order submit korlei Bangla United Admin Panel-e joma hobe ebong WhatsApp e instant message pathate parben.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: 'ME' (ORDER LIST & STATUS TRACKER) -->
+    <section id="page-me" class="page-view hidden max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      <!-- Profile Header -->
+      <div class="relative rounded-3xl p-6 sm:p-8 mb-8 overflow-hidden glass-card border border-cyan-500/40 shadow-2xl bg-gradient-to-r from-slate-950 via-slate-900 to-indigo-950/60">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4 text-center sm:text-left flex-col sm:flex-row">
+            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white text-4xl shadow-xl border-2 border-cyan-400/40">
+              <i class="ph-bold ph-user"></i>
+            </div>
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-[11px] font-bold uppercase mb-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>Customer Dashboard</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-black font-display text-white">ME & ORDER HISTORY</h2>
+              <p class="text-xs sm:text-sm text-slate-300 mt-0.5">Apnar submit kora order er status, live animation tracker ebong history ekhane paben.</p>
+            </div>
+          </div>
+
+          <button onclick="navigateTo('order')" class="glow-btn px-6 py-3 rounded-xl text-white font-bold text-xs flex items-center gap-2 shrink-0">
+            <i class="ph-bold ph-plus-circle text-base"></i>
+            <span data-i18n="meBtnNewOrder">Notun Order Korun</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sub Tabs: Pending Orders vs Confirmed Orders -->
+      <div class="flex items-center gap-3 mb-6 border-b border-slate-800 pb-3">
+        <button onclick="switchMeSubTab('pending')" id="meTabBtn-pending" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-amber-500 text-slate-950 flex items-center gap-2 shadow-lg">
+          <i class="ph-bold ph-clock"></i> <span data-i18n="meTabPending">Pending Orders (Waiting)</span>
+          <span id="meBadgePending" class="px-2 py-0.5 rounded-full text-[10px] bg-black text-amber-300 font-mono">0</span>
+        </button>
+
+        <button onclick="switchMeSubTab('confirmed')" id="meTabBtn-confirmed" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:text-white flex items-center gap-2 border border-slate-800">
+          <i class="ph-bold ph-check-circle"></i> <span data-i18n="meTabConfirmed">Delivery History Confirm</span>
+          <span id="meBadgeConfirmed" class="px-2 py-0.5 rounded-full text-[10px] bg-black text-emerald-300 font-mono">0</span>
+        </button>
+      </div>
+
+      <!-- Me Orders Content Grid -->
+      <div id="meOrdersListContainer" class="space-y-4"></div>
+
+      <!-- Empty State -->
+      <div id="meOrdersEmptyState" class="hidden text-center py-16 text-slate-500 glass-card rounded-3xl border border-slate-800">
+        <i class="ph-bold ph-package text-5xl mb-2 text-slate-600"></i>
+        <h4 class="text-sm font-bold text-slate-300" data-i18n="meEmptyTitle">Kono Order Pawa Jayni!</h4>
+        <p class="text-xs text-slate-500 mt-1" data-i18n="meEmptyDesc">Apni ekhono kono order koren ni athoba ei category khali.</p>
+        <button onclick="navigateTo('order')" class="mt-4 px-5 py-2 rounded-xl bg-purple-600 text-white font-bold text-xs" data-i18n="meBtnNewOrder">Ekhoni Order Korun</button>
+      </div>
+
+    </section>
+
+    <!-- PAGE 3: ORDER RULES -->
+    <section id="page-rules" class="page-view hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="text-center mb-8">
+        <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 uppercase tracking-wider" data-i18n="rulesBadge">
+          Shohoj Guide
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black font-display text-white mt-2">
+          <span data-i18n="rulesTitleStart">ORDER KORAR</span> <span class="text-cyan-400" data-i18n="rulesTitleEnd">NIYOMABOLI</span>
+        </h2>
+        <p class="text-slate-400 text-sm mt-1" data-i18n="rulesSubtitle">
+          Kivabe order korben ebong kivabe delivery paben tar step-by-step simple guide.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+        <div class="glass-card rounded-2xl p-5 border border-purple-500/30 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-purple-600/30 text-purple-400 border border-purple-500/40 flex items-center justify-center font-display font-bold text-lg shrink-0">
+            01
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white" data-i18n="ruleStep1Title">Product Select Kore Stock Check Koren</h4>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed" data-i18n="ruleStep1Desc">
+              Prothome amader "Stock & Price" page theke apnar jei product dorkar (jemon Minecraft account ba Discord Nitro) oita dekhe nin je stock ache kina.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-pink-500/30 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-pink-600/30 text-pink-400 border border-pink-500/40 flex items-center justify-center font-display font-bold text-lg shrink-0">
+            02
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-pink-300" data-i18n="ruleStep2Title">bKash ba Nagad-e Send Money Koren</h4>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed" data-i18n="ruleStep2Desc">
+              Order page-e dewa Rabbi Official Store-er Personal bKash ba Nagad number-e exact bill amount Send Money korun. Cash out korben na.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-amber-500/30 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-600/30 text-amber-400 border border-amber-500/40 flex items-center justify-center font-display font-bold text-lg shrink-0">
+            03
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-amber-300" data-i18n="ruleStep3Title">Last 4 Digits & Taka Form-e Likhun</h4>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed" data-i18n="ruleStep3Desc">
+              Jei number theke taka pathaisen tar Last 4 Digits (Shesh 4 ta songkha) ebong koto taka pathaisen ta order form-e likhe 'Order Confirm Korun' chapun.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-emerald-500/30 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 flex items-center justify-center font-display font-bold text-lg shrink-0">
+            04
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-emerald-300" data-i18n="ruleStep4Title">WhatsApp-e 5 theke 10 Minute-e Delivery</h4>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed" data-i18n="ruleStep4Desc">
+              Order submit houyar por amader Admin apnar payment check korbe ebong 5 theke 10 minute-er moddhe apnar WhatsApp number-e login credentials ba delivery link pathiye dibe!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-3xl p-6 border border-cyan-500/30 space-y-3">
+        <h3 class="text-base font-bold text-cyan-300 flex items-center gap-2">
+          <i class="ph-bold ph-shield-warning text-amber-400"></i>
+          <span data-i18n="rulesTermsHeading">Zoruri Kichu Niyom (Important Terms):</span>
+        </h3>
+        <ul class="space-y-2 text-xs text-slate-300 leading-relaxed">
+          <li class="flex items-start gap-2">
+            <i class="ph-bold ph-check-circle text-emerald-400 mt-0.5"></i>
+            <span data-i18n="termItem1"><b>Minecraft Accounts & Capes:</b> Full mail access thakbe. Delivery pawar por por e apnar nijer email ebong password change kore felben.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="ph-bold ph-check-circle text-emerald-400 mt-0.5"></i>
+            <span data-i18n="termItem2"><b>Discord Nitro:</b> Instant gift link dewa hobe. Link e click kore claim kore niben.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="ph-bold ph-check-circle text-emerald-400 mt-0.5"></i>
+            <span data-i18n="termItem3"><b>Warranty:</b> Product pawar por kono somoshya hole WhatsApp-e screenshot soho janaben, 100% replacement ba solution dewa hobe.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="ph-bold ph-x-circle text-rose-400 mt-0.5"></i>
+            <span data-i18n="termItem4"><b>Fake Order Nishedh:</b> Vul TrxID ba vula Last digit diye submit korle order permanent reject kora hobe.</span>
+          </li>
+        </ul>
+
+        <div class="pt-3">
+          <button onclick="navigateTo('order')" class="px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs" data-i18n="rulesUnderstoodBtn">
+            Bujhte Perechi, Ekhon Order Korbo ➔
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: CUSTOMER REVIEWS -->
+    <section id="page-reviews" class="page-view hidden max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+        <div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 border border-amber-500/30 text-amber-400 uppercase tracking-wider" data-i18n="revBadge">
+            Real Feedback
+          </span>
+          <h2 class="text-3xl font-black font-display text-white mt-1">
+            <span data-i18n="revTitle">CUSTOMER REVIEWS & RATINGS</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-1" data-i18n="revSubtitle">
+            Bangla United customer der ashol montobbo. Bhalo ebong Bad review shob transparent vabe dewa ache.
+          </p>
+        </div>
+
+        <button onclick="openReviewModal()" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-amber-500 to-purple-600 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-amber-600/30 self-start md:self-auto">
+          <i class="ph-bold ph-star"></i>
+          <span data-i18n="btnGiveReview">Apni Ekta Review Din</span>
+        </button>
+      </div>
+
+      <div class="flex items-center gap-2 mb-6 flex-wrap">
+        <button onclick="filterReviews('all')" id="revFilter-all" class="px-4 py-2 rounded-xl text-xs font-bold bg-purple-600 text-white border border-purple-500/40">
+          <span data-i18n="revFilterAll">Shob Review (All)</span>
+        </button>
+        <button onclick="filterReviews('good')" id="revFilter-good" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 flex items-center gap-1.5">
+          <i class="ph-fill ph-thumbs-up text-emerald-400"></i> <span data-i18n="revFilterGood">Bhalo Review (4-5 Star)</span>
+        </button>
+        <button onclick="filterReviews('bad')" id="revFilter-bad" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 flex items-center gap-1.5">
+          <i class="ph-fill ph-thumbs-down text-rose-400"></i> <span data-i18n="revFilterBad">Bad / Complain (1-3 Star)</span>
+        </button>
+      </div>
+
+      <div id="reviewsListGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+
+    <!-- PAGE 5: SECRET OWNER ADMIN PANEL -->
+    <section id="page-admin" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      <div class="p-6 rounded-3xl bg-gradient-to-r from-purple-950 via-slate-900 to-cyan-950 border border-purple-500/40 mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+            <h2 class="text-2xl font-black font-display text-white" data-i18n="adminHeading">BANGLA UNITED - OWNER CONTROL DASHBOARD</h2>
+          </div>
+          <p class="text-xs text-slate-300 mt-1" data-i18n="adminSubheading">
+            Rabbi Official Store: Kono code chharai Live Price bodlan, Stock shesh hole "Sold Out" korun ebong Customer Orders dekhe WhatsApp-e delivery pathan.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="openAddCapeModal()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-purple-600 hover:from-amber-500 hover:to-purple-500 text-white text-xs font-bold flex items-center gap-1.5 shadow-lg border border-amber-300/40">
+            <i class="ph-bold ph-cube text-base text-amber-300"></i> 
+            <span data-i18n="btnAddCapeAdmin">Minecraft Cape Add Korun</span>
+          </button>
+          
+          <button onclick="openAddProductModal()" class="px-4 py-2.5 rounded-xl glow-btn text-white text-xs font-bold flex items-center gap-1.5 shadow-lg">
+            <i class="ph-bold ph-plus-circle text-base"></i> <span data-i18n="btnAddNewProduct">Notun Product Add Korun</span>
+          </button>
+          
+          <button onclick="handleAdminLogout()" class="px-3.5 py-2.5 rounded-xl bg-rose-600/30 hover:bg-rose-600/50 text-rose-200 text-xs font-bold border border-rose-500/50 flex items-center gap-1.5">
+            <i class="ph-bold ph-sign-out text-sm"></i>
+            <span data-i18n="btnExitAdmin">Exit Owner Mode</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ADMIN SMP IP MANAGER CARD -->
+      <div class="glass-card rounded-2xl border border-emerald-500/40 p-5 mb-6 shadow-xl bg-emerald-950/15">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+          <div class="flex items-center gap-2">
+            <i class="ph-bold ph-broadcast text-emerald-400 text-xl"></i>
+            <h3 class="text-sm font-bold font-display text-white">MINECRAFT SMP IP & STATUS MANAGER</h3>
+          </div>
+          <span class="text-[11px] text-emerald-400 font-mono">Live Website Instant Update</span>
+        </div>
+
+        <form id="adminSmpForm" onsubmit="handleSaveSmpSettings(event)" class="grid grid-cols-1 sm:grid-cols-3 gap-3 items-end">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-300 mb-1">Server Name / Badge</label>
+            <input type="text" id="adminSmpBadgeInput" required placeholder="Rabbi Official Minecraft SMP" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-emerald-400 font-mono">
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-cyan-300 mb-1">Minecraft Server IP (Java/Bedrock)</label>
+            <input type="text" id="adminSmpIpInput" required placeholder="play.banglaunited.com" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-cyan-300 focus:outline-none focus:border-cyan-400 font-mono font-bold">
+          </div>
+
+          <div class="flex items-center gap-2">
+            <div class="flex-grow">
+              <label class="block text-[11px] font-bold text-emerald-300 mb-1">Status Badge</label>
+              <input type="text" id="adminSmpStatusInput" required placeholder="24/7 ONLINE" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-emerald-300 focus:outline-none focus:border-emerald-400 font-mono">
+            </div>
+            <button type="submit" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg self-end h-[38px] whitespace-nowrap">
+              Save IP
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="flex items-center gap-3 mb-6 border-b border-slate-800 pb-3">
+        <button onclick="switchAdminSubTab('orders')" id="admTabBtn-orders" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-purple-600 text-white flex items-center gap-2">
+          <i class="ph-bold ph-shopping-bag"></i> <span data-i18n="tabOrdersList">Customer Orders List</span>
+          <span id="admBadgeOrders" class="px-2 py-0.5 rounded-full text-[10px] bg-black text-purple-300 font-mono">0</span>
+        </button>
+        <button onclick="switchAdminSubTab('inventory')" id="admTabBtn-inventory" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:text-white flex items-center gap-2 border border-slate-800">
+          <i class="ph-bold ph-package"></i> <span data-i18n="tabInventoryList">Live Inventory & Price Manager</span>
+          <span id="admBadgeInventory" class="px-2 py-0.5 rounded-full text-[10px] bg-black text-cyan-300 font-mono">0</span>
+        </button>
+      </div>
+
+      <!-- ORDERS LIST -->
+      <div id="admSection-orders" class="space-y-6">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800">
+            <div class="text-[11px] text-slate-400 uppercase" data-i18n="statTotalOrders">Total Orders</div>
+            <div class="text-2xl font-black font-mono text-white mt-1" id="statOrdersTotal">0</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800">
+            <div class="text-[11px] text-amber-400 uppercase" data-i18n="statPendingOrders">Pending Orders</div>
+            <div class="text-2xl font-black font-mono text-amber-400 mt-1" id="statOrdersPending">0</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800">
+            <div class="text-[11px] text-emerald-400 uppercase" data-i18n="statDeliveredOrders">Delivered Orders</div>
+            <div class="text-2xl font-black font-mono text-emerald-400 mt-1" id="statOrdersDelivered">0</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800">
+            <div class="text-[11px] text-cyan-400 uppercase" data-i18n="statRevenue">Total Revenue (Taka)</div>
+            <div class="text-2xl font-black font-mono text-cyan-400 mt-1" id="statOrdersRevenue">৳ 0</div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+          <div class="p-4 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-slate-950/60">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-slate-300" data-i18n="filterStatusLabel">Status Filter:</span>
+              <select id="adminOrderStatusFilter" onchange="renderAdminOrdersTable()" class="bg-slate-900 border border-slate-700 rounded-lg text-xs px-3 py-1.5 text-slate-200 focus:outline-none">
+                <option value="all" data-i18n="optFilterAll">Shob Order (All)</option>
+                <option value="pending" data-i18n="optFilterPending">Pending</option>
+                <option value="confirmed" data-i18n="optFilterConfirmed">Confirmed</option>
+                <option value="delivered" data-i18n="optFilterDelivered">Delivered</option>
+                <option value="rejected" data-i18n="optFilterRejected">Rejected</option>
+              </select>
+            </div>
+            <div class="text-[11px] text-slate-400" data-i18n="saveNoteAuto">
+              * Shob data apnar browser-e permanent save thake
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-950 text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-800">
+                <tr>
+                  <th class="py-3.5 px-4" data-i18n="thOrderId">Order ID & Date</th>
+                  <th class="py-3.5 px-4" data-i18n="thCustomer">Customer Info (Name/WA/Discord)</th>
+                  <th class="py-3.5 px-4" data-i18n="thProduct">Ordered Product & Qty</th>
+                  <th class="py-3.5 px-4" data-i18n="thMethod">Method & Last 4 Digits</th>
+                  <th class="py-3.5 px-4" data-i18n="thAmount">Pathano Taka & Total</th>
+                  <th class="py-3.5 px-4" data-i18n="thStatus">Status</th>
+                  <th class="py-3.5 px-4 text-right" data-i18n="thAction">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminOrdersTableBody" class="divide-y divide-slate-800/60"></tbody>
+            </table>
+          </div>
+
+          <div id="adminOrdersEmptyNotice" class="hidden text-center py-16 text-slate-400">
+            <i class="ph-bold ph-tray text-4xl mb-2 text-slate-500"></i>
+            <p class="text-sm font-bold" data-i18n="emptyOrderNotice">Ekhono kono order ashe nai!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INVENTORY MANAGER -->
+      <div id="admSection-inventory" class="hidden space-y-6">
+        <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+          <div class="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60">
+            <h3 class="text-xs font-bold text-white flex items-center gap-2">
+              <i class="ph-bold ph-stack text-cyan-400"></i>
+              <span data-i18n="invTableHeading">All Products List & Controls</span>
+            </h3>
+            <button onclick="restoreDefaultProducts()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700">
+              <span data-i18n="btnRestoreDefault">Default Products Restore</span>
+            </button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-950 text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-800">
+                <tr>
+                  <th class="py-3 px-4" data-i18n="thItemName">Item Name & Icon</th>
+                  <th class="py-3 px-4" data-i18n="thCategory">Category</th>
+                  <th class="py-3 px-4" data-i18n="thLivePrice">Current Price (BDT)</th>
+                  <th class="py-3 px-4" data-i18n="thStockCount">Stock Count</th>
+                  <th class="py-3 px-4" data-i18n="thStockToggle">Stock Status (One-Click)</th>
+                  <th class="py-3 px-4 text-right" data-i18n="thActions">Edit / Delete</th>
+                </tr>
+              </thead>
+              <tbody id="adminInventoryTableBody" class="divide-y divide-slate-800/60"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- PUBLIC FOOTER -->
+  <footer class="mt-auto border-t border-slate-800/80 bg-[#03050a] py-6 px-4 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-400">Bangla United</span> • <span>Rabbi Official Store</span>
+      </div>
+      <div class="text-[11px] text-slate-600 flex items-center gap-1.5">
+        <span>© 2026 Bangla United. All rights reserved</span>
+        <span onclick="openAdminSecurityModal()" class="cursor-pointer text-slate-700 hover:text-purple-400 transition-colors select-none font-bold" title="Security Token">.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: FULL ANIMATED ORDER TRACKER PREVIEW -->
+  <div id="deliveryTrackerModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="relative w-full max-w-2xl bg-[#0b101c] border border-cyan-500/40 rounded-3xl p-6 shadow-2xl">
+      
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+          <h3 class="text-sm sm:text-base font-bold font-display text-white" id="trackerModalOrderTitle">Order Tracking Animation</h3>
+        </div>
+        <button onclick="closeDeliveryTrackerModal()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
+          <i class="ph-bold ph-x"></i>
+        </button>
+      </div>
+
+      <div class="delivery-viewport" id="deliveryViewport">
+        <div class="anim-moon"></div>
+
+        <div class="anim-house" id="animHouse">
+          <div class="anim-roof"></div>
+          <div class="anim-building">
+            <div class="anim-window-house"></div>
+            <div class="anim-door"></div>
+          </div>
+        </div>
+
+        <div class="anim-pack-area" id="animPackArea">
+          <div class="anim-item-drop" id="animItemDrop"></div>
+          <div class="anim-box" id="animBox">
+            <div class="anim-flap-l"></div>
+            <div class="anim-flap-r"></div>
+            <div class="anim-tape"></div>
+          </div>
+        </div>
+
+        <div class="anim-truck" id="animTruck">
+          <div class="anim-cargo">
+            <div class="anim-cargo-text-main">BANGLA UNITED</div>
+            <div class="anim-cargo-text-sub">ORDER DELIVERY CAR</div>
+            <div class="anim-truck-door" id="animTruckDoor"></div>
+          </div>
+          <div class="anim-cabin">
+            <div class="anim-window"></div>
+            <div class="anim-headlight">
+              <div class="anim-light-beam"></div>
+            </div>
+          </div>
+          <div class="anim-wheel back"></div>
+          <div class="anim-wheel front"></div>
+        </div>
+
+        <div class="anim-delivered-parcel" id="animDeliveredParcel"></div>
+
+        <div class="anim-road">
+          <div class="anim-stripes" id="animRoadStripes"></div>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3.5 rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+        <div>
+          <div class="text-[11px] text-slate-400">Live Status:</div>
+          <div class="text-sm font-bold text-cyan-300 font-cyber" id="trackerStatusLiveText">Order Processing...</div>
+        </div>
+        <button onclick="closeDeliveryTrackerModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs">
+          Close Tracker
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 1: ORDER CONFIRMATION SUCCESS -->
+  <div id="orderSuccessModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="relative w-full max-w-md bg-[#0b101c] border border-emerald-500/40 rounded-3xl p-6 shadow-2xl text-center">
+      <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center text-3xl mx-auto mb-4">
+        <i class="ph-bold ph-check-circle"></i>
+      </div>
+      
+      <h3 class="text-xl font-bold font-display text-white" data-i18n="modalSuccHeading">ORDER CONFIRM HOISE!</h3>
+      <p class="text-xs text-slate-300 mt-1 mb-4 leading-relaxed" data-i18n="modalSuccSub">
+        Apnar order request safolbhabe submit hoyeche. Nicher 'Order Confirm Korun' batone chap diye live delivery status dekhun.
+      </p>
+
+      <div class="p-3.5 rounded-2xl bg-slate-950 border border-slate-800 text-left text-xs space-y-1.5 mb-5">
+        <div class="flex justify-between">
+          <span class="text-slate-400" data-i18n="modalSuccOrderIdLabel">Order ID:</span>
+          <span id="modalSuccOrderId" class="font-mono font-bold text-cyan-300">#BU-000000</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400" data-i18n="modalSuccProductLabel">Product:</span>
+          <span id="modalSuccProduct" class="font-bold text-white">Product Name</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400" data-i18n="modalSuccAmountLabel">Paid Amount:</span>
+          <span id="modalSuccAmount" class="font-mono text-amber-400 font-bold">৳ 0</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button onclick="closeOrderSuccessModal()" class="w-1/2 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs" data-i18n="btnCloseModal">
+          Close
+        </button>
+        <button onclick="triggerOrderConfirmFlow()" class="w-1/2 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-95 text-white font-extrabold text-xs shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-1.5" data-i18n="btnPopupOrderConfirm">
+          <i class="ph-bold ph-check"></i>
+          <span>Order Confirm Korun</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: SECRET ADMIN PASSWORD LOGIN -->
+  <div id="adminLoginModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="relative w-full max-w-sm bg-[#0d1322] border border-purple-500/50 rounded-3xl p-6 shadow-2xl text-center">
+      <div class="w-12 h-12 rounded-2xl bg-purple-600/20 text-purple-400 border border-purple-500/40 flex items-center justify-center text-2xl mx-auto mb-3">
+        <i class="ph-bold ph-lock-key"></i>
+      </div>
+      
+      <h3 class="text-lg font-bold font-display text-white" data-i18n="adminLoginHeading">OWNER SECURITY LOGIN</h3>
+      <p class="text-xs text-slate-400 mt-1 mb-4" data-i18n="adminLoginSub">
+        Rabbi Official Store: Ei dashboard shudhu matro store owner er jonno. Password likhe login korun.
+      </p>
+
+      <form onsubmit="handleAdminLoginSubmit(event)" class="space-y-3.5">
+        <div class="text-left">
+          <label class="block text-[11px] font-bold text-slate-300 mb-1" data-i18n="labelAdminPassword">Admin Password</label>
+          <input type="password" id="adminPassInput" required placeholder="Owner Password (adminrabby)" autocomplete="current-password" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
+        </div>
+
+        <div class="flex items-center gap-2 pt-1">
+          <button type="button" onclick="closeAdminLoginModal()" class="w-1/2 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold" data-i18n="btnCancel">
+            Cancel
+          </button>
+          <button type="submit" class="w-1/2 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold" data-i18n="btnLogin">
+            Login Din
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 3: ADD / EDIT PRODUCT -->
+  <div id="productEditModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 overflow-y-auto">
+    <div class="relative w-full max-w-md bg-[#0d1322] border border-cyan-500/40 rounded-3xl p-6 shadow-2xl my-8">
+      
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-xl bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-lg">
+            <i class="ph-bold ph-pencil-simple"></i>
+          </span>
+          <h3 class="text-sm font-bold font-display text-white" id="productModalTitle">Product Add / Edit</h3>
+        </div>
+        <button onclick="closeProductModal()" class="w-7 h-7 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
+          <i class="ph-bold ph-x"></i>
+        </button>
+      </div>
+
+      <form id="productEditForm" onsubmit="handleProductSaveSubmit(event)" class="space-y-3.5">
+        <input type="hidden" id="editProductId" value="">
+
+        <div class="grid grid-cols-3 gap-2.5">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-300 mb-1" data-i18n="labelProductIcon">Icon (Emoji)</label>
+            <input type="text" id="editProductIcon" required placeholder="💎 ba 🪙" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-center text-base text-white focus:outline-none focus:border-cyan-400">
+            <div class="flex items-center justify-center gap-1 mt-1 text-xs">
+              <span onclick="setQuickIcon('💎')" class="cursor-pointer hover:scale-125 transition-transform">💎</span>
+              <span onclick="setQuickIcon('🪙')" class="cursor-pointer hover:scale-125 transition-transform">🪙</span>
+              <span onclick="setQuickIcon('⚡')" class="cursor-pointer hover:scale-125 transition-transform">⚡</span>
+              <span onclick="setQuickIcon('🔥')" class="cursor-pointer hover:scale-125 transition-transform">🔥</span>
+              <span onclick="setQuickIcon('⛏️')" class="cursor-pointer hover:scale-125 transition-transform">⛏️</span>
+            </div>
+          </div>
+
+          <div class="col-span-2">
+            <div class="flex items-center justify-between mb-1">
+              <label class="block text-[11px] font-bold text-slate-300" data-i18n="labelProductCategory">Category</label>
+              <button type="button" onclick="promptCreateNewCategory()" class="text-[10px] text-cyan-400 hover:text-cyan-300 font-bold flex items-center gap-1 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-500/40">
+                <i class="ph-bold ph-plus"></i> <span>+ Notun Category</span>
+              </button>
+            </div>
+            <select id="editProductCategory" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-400">
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-300 mb-1" data-i18n="labelProductTitle">Product Name (Puro Title) *</label>
+          <input type="text" id="editProductTitle" required placeholder="Udahoron: Free Fire 1000 Diamonds" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold text-amber-300 mb-1" data-i18n="labelProductPrice">Price (Taka BDT) *</label>
+            <input type="number" id="editProductPrice" min="1" required placeholder="420" class="w-full bg-slate-950 border border-amber-500/50 rounded-xl px-3 py-2 text-xs text-amber-300 font-mono font-bold focus:outline-none focus:border-amber-400">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-emerald-300 mb-1" data-i18n="labelProductStock">Stock Count *</label>
+            <input type="number" id="editProductStock" min="0" required placeholder="10" class="w-full bg-slate-950 border border-emerald-500/50 rounded-xl px-3 py-2 text-xs text-emerald-300 font-mono font-bold focus:outline-none focus:border-emerald-400">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-300 mb-1" data-i18n="labelProductBadge">Badge Text</label>
+            <input type="text" id="editProductBadge" placeholder="Instant Delivery" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-400">
+          </div>
+
+          <div class="flex items-center justify-between p-2 rounded-xl bg-slate-950 border border-slate-700 self-end">
+            <span class="text-xs font-bold text-slate-300" data-i18n="labelProductInStock">In Stock?</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="editProductIsAvailable" class="sr-only peer" checked>
+              <div class="w-8 h-4 bg-slate-700 rounded-full peer peer-checked:bg-emerald-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-300 mb-1" data-i18n="labelProductFeatures">Features (Comma diye alada korun)</label>
+          <input type="text" id="editProductFeatures" placeholder="100% Safe, 2-5 Mins Delivery" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400">
+        </div>
+
+        <div class="pt-2 flex items-center justify-end gap-2">
+          <button type="button" onclick="closeProductModal()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold" data-i18n="btnCancel">
+            Cancel
+          </button>
+          <button type="submit" class="px-5 py-2 rounded-xl glow-btn text-white text-xs font-bold" data-i18n="btnSaveProduct">
+            Save Korun
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 4: SUBMIT NEW REVIEW -->
+  <div id="reviewAddModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="relative w-full max-w-md bg-[#0d1322] border border-amber-500/40 rounded-3xl p-6 shadow-2xl">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+        <h3 class="text-sm font-bold font-display text-white flex items-center gap-2">
+          <i class="ph-fill ph-star text-amber-400 text-base"></i>
+          <span data-i18n="reviewModalHeading">Apnar Review Din</span>
+        </h3>
+        <button onclick="closeReviewModal()" class="w-7 h-7 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
+          <i class="ph-bold ph-x"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleReviewSubmit(event)" class="space-y-3.5">
+        <div>
+          <label class="block text-[11px] font-bold text-slate-300 mb-1" data-i18n="labelRevName">Apnar Name *</label>
+          <input type="text" id="revInputName" required placeholder="Shakib Al Hasan" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-amber-400">
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-300 mb-1" data-i18n="labelRevProduct">Kon Product Kinsen? *</label>
+          <select id="revInputProduct" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-amber-400"></select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-300 mb-1" data-i18n="labelRevRating">Star Rating *</label>
+            <select id="revInputRating" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-amber-300 font-bold focus:outline-none focus:border-amber-400">
+              <option value="5">★★★★★ (5 Star)</option>
+              <option value="4">★★★★☆ (4 Star)</option>
+              <option value="3">★★★☆☆ (3 Star)</option>
+              <option value="2">★★☆☆☆ (2 Star)</option>
+              <option value="1">★☆☆☆☆ (1 Star)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-slate-300 mb-1" data-i18n="labelRevCategory">Review Category *</label>
+            <select id="revInputType" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400">
+              <option value="good" data-i18n="optRevGood">Bhalo Review (Good)</option>
+              <option value="bad" data-i18n="optRevBad">Complain / Bad Review</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-300 mb-1" data-i18n="labelRevComment">Apnar Montobbo (Comment) *</label>
+          <textarea id="revInputComment" rows="3" required placeholder="Service kemon laglo?" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-amber-400"></textarea>
+        </div>
+
+        <div class="pt-2 flex items-center justify-end gap-2">
+          <button type="button" onclick="closeReviewModal()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold" data-i18n="btnCancel">
+            Cancel
+          </button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs" data-i18n="btnSubmitReview">
+            Review Submit Korun
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    const I18N = {
+      banglish: {
+        brandTitle: "BANGLA UNITED",
+        brandSubtitle: "Welcome to Rabbi Official Store",
+        announcementText: "BANGLA UNITED - WELCOME TO RABBI OFFICIAL STORE | DISCORD NITRO, MINECRAFT FULL ACCESS, CAPES & NETFLIX 100% INSTANT DELIVERY",
+        navStock: "Stock & Price List",
+        navCape: "Minecraft Cape",
+        navOrder: "Order Page",
+        navRules: "Order Niyom",
+        navReviews: "Reviews",
+        navMe: "Me",
+        mNavMe: "Me",
+        btnHelp: "Help",
+        mNavStock: "Stock",
+        mNavCape: "Cape",
+        mNavOrder: "Order",
+        mNavRules: "Niyom",
+        mNavReviews: "Reviews",
+        heroBadge: "Bangla United • Rabbi Official Store",
+        heroTitleStart: "AMADER LIVE",
+        heroTitleEnd: "STOCK & PRICE",
+        heroDesc: "Rabbi Official Store-e apnake swagotom! Nicher list theke apnar pochondo moto product check korun. Stock thakle shorashori 'Order Korun' batone chap diye 2 minute e order confirm koren!",
+        heroActionBtn: "ORDER KORAR JONNO EIKHANE CHAP DIN ➔",
+        catAll: "All Products",
+        capeBoxBadge: "Exclusive Cape Department",
+        capeBoxTitle: "MINECRAFT CAPE (10 SLOTS)",
+        capeBoxDesc: "Minecraft exclusive cape kinte chan? Stock update holei direct eikhane shob cape show korbe. Instant delivery and 100% safe.",
+        capeBoxBtn: "MINECRAFT CAPE PAGE ➔",
+        stockBottomHeading: "Kon product pochondo hoise?",
+        stockBottomSub: "Ekhoni niche 'Order Korun' chapun ebong form puron kore WhatsApp e delivery bujhe nin.",
+        stockBottomBtn: "Order Page-e Jaan ➔",
+        capeHeroBadge: "Minecraft Exclusive Capes Section",
+        capeHeroTitle: "EXCLUSIVE CAPES",
+        capeHeroDesc: "Rabbi Official Store-e Minecraft Cape collection! Jokhon-i notun cape-er stock ashbe, ekhane protiti slot-e naam, live daam ebong direct order option paben. 100% Instant Delivery ebong Official Guarantee!",
+        capeToOrderBtn: "Order Page-e Jaan ➔",
+        capeToStockBtn: "Shob Products Dekhun",
+        capeSlotsHeading: "Minecraft Cape Slot Talika (10 Ti Slot)",
+        capeSlotEmptyTitle: "Cape Stock Khali",
+        capeSlotEmptyDesc: "Shighroi notun cape add kora hobe. Owner panel theke add korlei ekhane ashbe.",
+        orderBadge: "Bangla United Instant Order Form",
+        orderTitle: "ORDER PAGE",
+        orderTitleSub: "(CONFIRM KORUN)",
+        orderSubtitle: "Nicher product select korun ebong apnar Name, WhatsApp & Bkash information diye order submit koren.",
+        stepSelectProduct: "Product Select Korun",
+        stepSelectProductHint: "* Ghorer upor click korun",
+        summaryItemLabel: "Selected Item:",
+        summaryUnitLabel: "Per Unit Price:",
+        summaryQtyLabel: "Quantity (Koyti Lagbe):",
+        summaryTotalBillLabel: "Total Bill (Shobshakulle):",
+        paymentNoticeHeading: "AMADER PAYMENT NUMBER (SEND MONEY / PERSONAL):",
+        paymentNoticeHint: "* Taka pathanor por apnar number-er Last 4 Digits ebong koto taka pathaisen ta daan pasher form-e likhun.",
+        stepCustomerInfo: "Apnar Information & Payment Din",
+        labelCustName: "Apnar Name (Kastomer er Naam) *",
+        labelCustWhatsApp: "WhatsApp Number (Jekhane Delivery Pathabo) *",
+        labelCustDiscord: "Discord Username (Jodi thake)",
+        labelPayMethod: "Kisher maddhome taka pathaisen? *",
+        labelLastDigits: "Sender Last 4 Digits *",
+        labelPaidAmount: "Apni Koto Taka Pathaisen? *",
+        labelNote: "Extra Message / Note (Optional)",
+        btnSubmitOrder: "ORDER CONFIRM KORUN & SUBMIT DIN",
+        submitOrderNote: "✓ Order submit korlei Bangla United Admin Panel-e joma hobe ebong WhatsApp e instant message pathate parben.",
+        rulesBadge: "Shohoj Guide",
+        rulesTitleStart: "ORDER KORAR",
+        rulesTitleEnd: "NIYOMABOLI",
+        rulesSubtitle: "Kivabe order korben ebong kivabe delivery paben tar step-by-step simple guide.",
+        ruleStep1Title: "Product Select Kore Stock Check Koren",
+        ruleStep1Desc: "Prothome amader 'Stock & Price' page theke apnar jei product dorkar (jemon Minecraft account ba Discord Nitro) oita dekhe nin je stock ache kina.",
+        ruleStep2Title: "bKash ba Nagad-e Send Money Koren",
+        ruleStep2Desc: "Order page-e dewa Rabbi Official Store-er Personal bKash ba Nagad number-e exact bill amount Send Money korun. Cash out korben na.",
+        ruleStep3Title: "Last 4 Digits & Taka Form-e Likhun",
+        ruleStep3Desc: "Jei number theke taka pathaisen tar Last 4 Digits (Shesh 4 ta songkha) ebong koto taka pathaisen ta order form-e likhe 'Order Confirm Korun' chapun.",
+        ruleStep4Title: "WhatsApp-e 5 theke 10 Minute-e Delivery",
+        ruleStep4Desc: "Order submit houyar por amader Admin apnar payment check korbe ebong 5 theke 10 minute-er moddhe apnar WhatsApp number-e login credentials ba delivery link pathiye dibe!",
+        rulesTermsHeading: "Zoruri Kichu Niyom (Important Terms):",
+        termItem1: "<b>Minecraft Accounts & Capes:</b> Full mail access thakbe. Delivery pawar por por e apnar nijer email ebong password change kore felben.",
+        termItem2: "<b>Discord Nitro:</b> Instant gift link dewa hobe. Link e click kore claim kore niben.",
+        termItem3: "<b>Warranty:</b> Product pawar por kono somoshya hole WhatsApp-e screenshot soho janaben, 100% replacement ba solution dewa hobe.",
+        termItem4: "<b>Fake Order Nishedh:</b> Vul TrxID ba vula Last digit diye submit korle order permanent reject kora hobe.",
+        rulesUnderstoodBtn: "Bujhte Perechi, Ekhon Order Korbo ➔",
+        revBadge: "Real Feedback",
+        revTitle: "CUSTOMER REVIEWS & RATINGS",
+        revSubtitle: "Bangla United customer der ashol montobbo. Bhalo ebong Bad review shob transparent vabe dewa ache.",
+        btnGiveReview: "Apni Ekta Review Din",
+        revFilterAll: "Shob Review (All)",
+        revFilterGood: "Bhalo Review (4-5 Star)",
+        revFilterBad: "Bad / Complain (1-3 Star)",
+        adminHeading: "BANGLA UNITED - OWNER CONTROL DASHBOARD",
+        adminSubheading: "Rabbi Official Store: Kono code chharai Live Price bodlan, Stock shesh hole 'Sold Out' korun ebong Customer Orders dekhe WhatsApp-e delivery pathan.",
+        btnAddCapeAdmin: "Minecraft Cape Add Korun",
+        btnAddNewProduct: "Notun Product Add Korun",
+        btnExitAdmin: "Exit Owner Mode",
+        tabOrdersList: "Customer Orders List",
+        tabInventoryList: "Live Inventory & Price Manager",
+        statTotalOrders: "Total Orders",
+        statPendingOrders: "Pending Orders",
+        statDeliveredOrders: "Delivered Orders",
+        statRevenue: "Total Revenue (Taka)",
+        filterStatusLabel: "Status Filter:",
+        optFilterAll: "Shob Order (All)",
+        optFilterPending: "Pending",
+        optFilterConfirmed: "Confirmed",
+        optFilterDelivered: "Delivered",
+        optFilterRejected: "Rejected",
+        saveNoteAuto: "* Shob data apnar browser-e permanent save thake",
+        thOrderId: "Order ID & Date",
+        thCustomer: "Customer Info (Name/WA/Discord)",
+        thProduct: "Ordered Product & Qty",
+        thMethod: "Method & Last 4 Digits",
+        thAmount: "Pathano Taka & Total",
+        thStatus: "Status",
+        thAction: "Actions",
+        emptyOrderNotice: "Ekhono kono order ashe nai!",
+        invTableHeading: "All Products List & Controls",
+        btnRestoreDefault: "Default Products Restore",
+        thItemName: "Item Name & Icon",
+        thCategory: "Category",
+        thLivePrice: "Current Price (BDT)",
+        thStockCount: "Stock Count",
+        thStockToggle: "Stock Status (One-Click)",
+        thActions: "Edit / Delete",
+        modalSuccHeading: "ORDER CONFIRM HOISE!",
+        modalSuccSub: "Apnar order request safolbhabe submit hoyeche. Nicher 'Order Confirm Korun' batone chap diye live delivery status dekhun.",
+        modalSuccOrderIdLabel: "Order ID:",
+        modalSuccProductLabel: "Product:",
+        modalSuccAmountLabel: "Paid Amount:",
+        btnPopupOrderConfirm: "Order Confirm Korun",
+        btnCloseModal: "Close",
+        adminLoginHeading: "OWNER SECURITY LOGIN",
+        adminLoginSub: "Rabbi Official Store: Ei dashboard shudhu matro store owner er jonno. Password likhe login korun.",
+        labelAdminPassword: "Admin Password",
+        btnCancel: "Cancel",
+        btnLogin: "Login Din",
+        labelProductIcon: "Icon (Emoji)",
+        labelProductCategory: "Category",
+        labelProductTitle: "Product Name (Puro Title) *",
+        labelProductPrice: "Price (Taka BDT) *",
+        labelProductStock: "Stock Count *",
+        labelProductBadge: "Badge Text",
+        labelProductInStock: "In Stock?",
+        labelProductFeatures: "Features (Comma diye alada korun)",
+        btnSaveProduct: "Save Korun",
+        reviewModalHeading: "Apnar Review Din",
+        labelRevName: "Apnar Name *",
+        labelRevProduct: "Kon Product Kinsen? *",
+        labelRevRating: "Star Rating *",
+        labelRevCategory: "Review Category *",
+        optRevGood: "Bhalo Review (Good)",
+        optRevBad: "Complain / Bad Review",
+        labelRevComment: "Apnar Montobbo (Comment) *",
+        btnSubmitReview: "Review Submit Korun",
+        soldOutBadge: "SOLD OUT (Shesh)",
+        inStockBadge: "IN STOCK (Ready)",
+        orderNowBtnText: "ORDER KORUN",
+        stockSheshBtn: "STOCK SHESH (SOLD OUT)",
+        meBtnNewOrder: "Notun Order Korun",
+        meTabPending: "Pending Orders (Waiting)",
+        meTabConfirmed: "Delivery History Confirm",
+        meEmptyTitle: "Kono Order Pawa Jayni!",
+        meEmptyDesc: "Apni ekhono kono order koren ni athoba ei category khali."
+      },
+      bangla: {
+        brandTitle: "বাংলা ইউনাইটেড",
+        brandSubtitle: "Welcome to Rabbi Official Store",
+        announcementText: "বাংলা ইউনাইটেড - রাব্বি অফিসিয়াল স্টোর | ডিসকর্ড নাইট্রো, মাইনক্রাফট ফুল এক্সেস, কেপ ও নেটফ্লিক্স ১০০% ইনস্ট্যান্ট ডেলিভারি",
+        navStock: "স্টক ও মূল্য তালিকা",
+        navCape: "মাইনক্রাফট কেপ",
+        navOrder: "অর্ডার পেজ",
+        navRules: "অর্ডার নিয়ম",
+        navReviews: "রিভিউ",
+        navMe: "মি",
+        mNavMe: "মি",
+        btnHelp: "সহায়তা",
+        mNavStock: "স্টক",
+        mNavCape: "কেপ",
+        mNavOrder: "অর্ডার",
+        mNavRules: "নিয়ম",
+        mNavReviews: "রিভিউ",
+        heroBadge: "বাংলা ইউনাইটেড • রাব্বি অফিসিয়াল স্টোর",
+        heroTitleStart: "আমাদের লাইভ",
+        heroTitleEnd: "স্টক ও প্রাইস",
+        heroDesc: "রাব্বি অফিসিয়াল স্টোরে আপনাকে স্বাগতম! নিচের তালিকা থেকে আপনার পছন্দের পণ্যটি বেছে নিন। স্টকে থাকলে সরাসরি 'অর্ডার করুন' বাটনে ক্লিক করে ২ মিনিটে অর্ডার নিশ্চিত করুন!",
+        heroActionBtn: "অর্ডার করার জন্য এখানে চাপ দিন ➔",
+        catAll: "সব প্রোডাক্ট",
+        capeBoxBadge: "এক্সক্লুসিভ কেপ বিভাগ",
+        capeBoxTitle: "মাইনক্রাফট কেপ (১০টি স্লট)",
+        capeBoxDesc: "মাইনক্রাফট এক্সক্লুসিভ কেপ কিনতে চান? স্টক আপডেট হলেই সরাসরি এখানে সব কেপ দেখতে পাবেন। ইনস্ট্যান্ট ডেলিভারি ও ১০০% নিরাপদ।",
+        capeBoxBtn: "মাইনক্রাফট কেপ পেজ ➔",
+        stockBottomHeading: "কোন পণ্যটি পছন্দ হয়েছে?",
+        stockBottomSub: "এখনই নিচে 'অর্ডার করুন' বাটনে চাপুন এবং তথ্য পূরণ করে হোয়াটসঅ্যাপে দ্রুত ডেলিভারি বুঝে নিন।",
+        stockBottomBtn: "অর্ডার পেজে যান ➔",
+        capeHeroBadge: "মাইনক্রাফট এক্সক্লুসিভ কেপ বিভাগ",
+        capeHeroTitle: "এক্সক্লুসিভ কেপ কালেকশন",
+        capeHeroDesc: "রাব্বি অফিসিয়াল স্টোরে মাইনক্রাফট কেপ কালেকশন! যখনই নতুন কেভের স্টক আসবে, এখানে প্রতিটি স্লটে নাম, লাইভ দাম ও সরাসরি অর্ডার অপশন পাবেন। ১০০% ইনস্ট্যান্ট ডেলিভারি ও অফিসিয়াল গ্যারান্টি!",
+        capeToOrderBtn: "অর্ডার পেজে যান ➔",
+        capeToStockBtn: "সব প্রোডাক্ট দেখুন",
+        capeSlotsHeading: "মাইনক্রাফট কেপ স্লট তালিকা (১০টি স্লট)",
+        capeSlotEmptyTitle: "কেভ স্টক খালি",
+        capeSlotEmptyDesc: "শীঘ্রই নতুন কেভ যুক্ত করা হবে। ওনার প্যানেল থেকে যোগ করলেই এখানে দেখা যাবে।",
+        orderBadge: "বাংলা ইউনাইটেড ইনস্ট্যান্ট অর্ডার ফর্ম",
+        orderTitle: "অর্ডার পেজ",
+        orderTitleSub: "(নিশ্চিত করুন)",
+        orderSubtitle: "নিচের পণ্যটি সিলেক্ট করুন এবং আপনার নাম, হোয়াটসঅ্যাপ ও বিকাশ তথ্য দিয়ে অর্ডার সাবমিট করুন।",
+        stepSelectProduct: "প্রোডাক্ট সিলেক্ট করুন",
+        stepSelectProductHint: "* প্রোডাক্টের ঘরের উপর ক্লিক করুন",
+        summaryItemLabel: "বাছাইকৃত প্রোডাক্ট:",
+        summaryUnitLabel: "একক মূল্য:",
+        summaryQtyLabel: "পরিমাণ (কয়টি লাগবে):",
+        summaryTotalBillLabel: "সর্বমোট বিল:",
+        paymentNoticeHeading: "আমাদের পেমেন্ট নাম্বার (সেন্ড মানি / পার্সোনাল):",
+        paymentNoticeHint: "* টাকা পাঠানোর পর আপনার নম্বরের শেষ ৪টি ডিজিট এবং কত টাকা পাঠিয়েছেন তা ডানপাশের ফর্মে লিখুন।",
+        stepCustomerInfo: "আপনার তথ্য ও পেমেন্ট দিন",
+        labelCustName: "আপনার নাম (কাস্টমারের নাম) *",
+        labelCustWhatsApp: "হোয়াটসঅ্যাপ নম্বর (যেখানে ডেলিভারি পাবেন) *",
+        labelCustDiscord: "ডিসকর্ড ইউজারনেম (যদি থাকে)",
+        labelPayMethod: "কিসের মাধ্যমে টাকা পাঠিয়েছেন? *",
+        labelLastDigits: "প্রেরক নম্বরের শেষ ৪ ডিজিট *",
+        labelPaidAmount: "আপনি কত টাকা পাঠিয়েছেন? *",
+        labelNote: "অতিরিক্ত বার্তা / নোট (ঐচ্ছিক)",
+        btnSubmitOrder: "অর্ডার কনফার্ম ও সাবমিট করুন",
+        submitOrderNote: "✓ অর্ডার সাবমিট করলেই বাংলা ইউনাইটেড অ্যাডমিন প্যানেলে জমা হবে এবং হোয়াটসঅ্যাপে তাৎক্ষণিক মেসেজ পাঠানো যাবে।",
+        rulesBadge: "সহজ গাইডলাইন",
+        rulesTitleStart: "অর্ডার করার",
+        rulesTitleEnd: "নিয়মাবলী",
+        rulesSubtitle: "কীভাবে সহজে অর্ডার করবেন এবং দ্রুত ডেলিভারি পাবেন তার ধাপে ধাপে গাইড।",
+        ruleStep1Title: "পণ্য সিলেক্ট করে স্টক দেখে নিন",
+        ruleStep1Desc: "প্রথমে আমাদের 'স্টক ও প্রাইস' পেজ থেকে আপনার প্রয়োজনীয় পণ্যটি (যেমন: মাইনক্রাফট অ্যাকাউন্ট বা ডিসকর্ড নাইট্রো) স্টকে আছে কি না দেখে নিন।",
+        ruleStep2Title: "বিকাশ বা নগদে সেন্ড মানি করুন",
+        ruleStep2Desc: "অর্ডার পেজে দেওয়া রাব্বি অফিসিয়াল স্টোরের পার্সোনাল বিকাশ বা নগদ নম্বরে নির্ধারিত মোট টাকা সেন্ড মানি করুন। ক্যাশ আউট করবেন না।",
+        ruleStep3Title: "শেষ ৪ ডিজিট ও টাকার পরিমাণ লিখুন",
+        ruleStep3Desc: "যে নম্বর থেকে টাকা পাঠিয়েছেন তার শেষ ৪টি সংখ্যা এবং কত টাকা পাঠিয়েছেন তা ফর্মে লিখে 'অর্ডার কনফার্ম করুন' বাটনে চাপুন।",
+        ruleStep4Title: "হোয়াটসঅ্যাপে ৫ থেকে ১০ মিনিটে ডেলিভারি",
+        ruleStep4Desc: "অর্ডার সাবমিট হওয়ার পর আমাদের অ্যাডমিন পেমেন্ট যাচাই করে ৫ থেকে ১০ মিনিটের মধ্যে আপনার হোয়াটসঅ্যাপে লগইন তথ্য বা গিফট লিঙ্ক পাঠিয়ে দেবে!",
+        rulesTermsHeading: "জরুরি কিছু নিয়মাবলী (শর্তসমূহ):",
+        termItem1: "<b>মাইনক্রাফট অ্যাকাউন্ট ও কেপ:</b> সম্পূর্ণ ইমেইল এক্সেস থাকবে। ডেলিভারি পাওয়ার সাথে সাথে আপনার নিজস্ব ইমেইল ও পাসওয়ার্ড পরিবর্তন করে নিবেন।",
+        termItem2: "<b>ডিসকর্ড নাইট্রো:</b> ইনস্ট্যান্ট গিফট লিঙ্ক প্রদান করা হবে। লিঙ্কে ক্লিক করেই ক্লাইম করে নিতে পারবেন।",
+        termItem3: "<b>ওয়ারেন্টি:</b> পণ্য পাওয়ার পর যেকোনো সমস্যা হলে হোয়াটসঅ্যাপে স্ক্রিনশটসহ জানালে ১০০% রিপ্লেসমেন্ট বা সমাধান দেওয়া হবে।",
+        termItem4: "<b>ভুয়া অর্ডার সম্পূর্ণ নিষিদ্ধ:</b> ভুল TrxID বা ভুয়া শেষ ডিজিট দিলে অর্ডারটি স্বয়ংক্রিয়ভাবে বাতিল ও ব্লক করা হবে।",
+        rulesUnderstoodBtn: "বুঝতে পেরেছি, এখন অর্ডার করব ➔",
+        revBadge: "আসল প্রতিক্রিয়া",
+        revTitle: "কাস্টমার রিভিউ ও রেটিং",
+        revSubtitle: "বাংলা ইউনাইটেড স্টোরের গ্রাহকদের আসল মতামত। ভালো এবং অভিযোগের রিভিউ সম্পূর্ণ স্বচ্ছভাবে প্রদর্শিত হচ্ছে।",
+        btnGiveReview: "একটি রিভিউ দিন",
+        revFilterAll: "সব রিভিউ (All)",
+        revFilterGood: "ভালো রিভিউ (৪-৫ স্টার)",
+        revFilterBad: "অভিযোগ / ব্যাড রিভিউ",
+        adminHeading: "বাংলা ইউনাইটেড - মালিক কন্ট্রোল ড্যাশবোর্ড",
+        adminSubheading: "রাব্বি অফিসিয়াল স্টোর: কোনো কোডিং ছাড়াই লাইভ দাম পরিবর্তন করুন, স্টক শেষ হলে 'Sold Out' করুন এবং অর্ডার দেখে হোয়াটসঅ্যাপে ডেলিভারি দিন।",
+        btnAddCapeAdmin: "মাইনক্রাফট কেপ যোগ করুন",
+        btnAddNewProduct: "নতুন প্রোডাক্ট যোগ করুন",
+        btnExitAdmin: "মালিক মোড লক ও প্রস্থান",
+        tabOrdersList: "অর্ডার তালিকা",
+        tabInventoryList: "লাইভ স্টক ও প্রাইজ ম্যানেজার",
+        statTotalOrders: "মোট অর্ডার",
+        statPendingOrders: "পেন্ডিং অর্ডার",
+        statDeliveredOrders: "ডেলিভারকৃত অর্ডার",
+        statRevenue: "মোট রেভিনিউ (টাকা)",
+        filterStatusLabel: "স্ট্যাটাস ফিল্টার:",
+        optFilterAll: "সব অর্ডার",
+        optFilterPending: "পেন্ডিং",
+        optFilterConfirmed: "কনফার্মড",
+        optFilterDelivered: "ডেলিভারড",
+        optFilterRejected: "বাতিল",
+        saveNoteAuto: "* সমস্ত ডাটা আপনার ব্রাউজারে স্বয়ংক্রিয়ভাবে সেভ থাকে",
+        thOrderId: "অর্ডার আইডি ও তারিখ",
+        thCustomer: "গ্রাহকের তথ্য (নাম/WA/Discord)",
+        thProduct: "পণ্য ও পরিমাণ",
+        thMethod: "পদ্ধতি ও শেষ ৪ ডিজিট",
+        thAmount: "প্রেরিত টাকা ও মোট",
+        thStatus: "অবস্থা",
+        thAction: "অ্যাকশন",
+        emptyOrderNotice: "এখনও কোনো অর্ডার আসেনি!",
+        invTableHeading: "সকল প্রোডাক্টের তালিকা ও কন্ট্রোল",
+        btnRestoreDefault: "ডিফল্ট প্রোডাক্ট ফিরিয়ে আনুন",
+        thItemName: "পণ্যের নাম ও আইকন",
+        thCategory: "ক্যাটাগরি",
+        thLivePrice: "বর্তমান দাম (টাকা)",
+        thStockCount: "স্টক সংখ্যা",
+        thStockToggle: "স্টক স্ট্যাটাস (১-ক্লিক)",
+        thActions: "এডিট / ডিলিট",
+        modalSuccHeading: "অর্ডার সফল হয়েছে!",
+        modalSuccSub: "আপনার অর্ডার রিকোয়েস্ট সফলভাবে জমা হয়েছে। নিচের 'অর্ডার কনফার্ম করুন' বাটনে চাপ দিয়ে লাইভ স্ট্যাটাস দেখুন।",
+        modalSuccOrderIdLabel: "অর্ডার আইডি:",
+        modalSuccProductLabel: "পণ্য:",
+        modalSuccAmountLabel: "প্রদত্ত টাকা:",
+        btnPopupOrderConfirm: "অর্ডার কনফার্ম করুন",
+        btnCloseModal: "বন্ধ করুন",
+        adminLoginHeading: "মালিক সিকিউরিটি লগইন",
+        adminLoginSub: "রাব্বি অফিসিয়াল স্টোর: এই ড্যাশবোর্ডটি শুধুমাত্র স্টোরের মালিকের জন্য। পাসওয়ার্ড দিয়ে প্রবেশ করুন।",
+        labelAdminPassword: "অ্যাডমিন পাসওয়ার্ড",
+        btnCancel: "বাতিল",
+        btnLogin: "লগইন করুন",
+        labelProductIcon: "আইকন (ইমোজি)",
+        labelProductCategory: "ক্যাটাগরি",
+        labelProductTitle: "প্রোডাক্টের পুরো নাম *",
+        labelProductPrice: "মূল্য (টাকা BDT) *",
+        labelProductStock: "স্টক সংখ্যা *",
+        labelProductBadge: "ব্যাজ টেক্সট",
+        labelProductInStock: "স্টকে আছে?",
+        labelProductFeatures: "ফিচারসমূহ (কমা দিয়ে আলাদা করুন)",
+        btnSaveProduct: "সেভ করুন",
+        reviewModalHeading: "আপনার মতামত দিন",
+        labelRevName: "আপনার নাম *",
+        labelRevProduct: "কোন পণ্য কিনেছেন? *",
+        labelRevRating: "স্টার রেটিং *",
+        labelRevCategory: "রিভিউর ধরণ *",
+        optRevGood: "ভালো রিভিউ (Good)",
+        optRevBad: "অভিযোগ / ব্যাড রিভিউ",
+        labelRevComment: "আপনার মন্তব্য *",
+        btnSubmitReview: "রিভিউ জমা দিন",
+        soldOutBadge: "স্টক শেষ (Sold Out)",
+        inStockBadge: "স্টকে আছে (Ready)",
+        orderNowBtnText: "অর্ডার করুন",
+        stockSheshBtn: "স্টক শেষ (SOLD OUT)",
+        meBtnNewOrder: "নতুন অর্ডার করুন",
+        meTabPending: "পেন্ডিং অর্ডার (অপেক্ষমান)",
+        meTabConfirmed: "ডেলিভারি হিস্টোরি কনফার্ম",
+        meEmptyTitle: "কোনো অর্ডার পাওয়া যায়নি!",
+        meEmptyDesc: "আপনি এখনও কোনো অর্ডার করেননি অথবা এই ক্যাটাগরি খালি।"
+      }
+    };
+
+    const DEFAULT_CATEGORIES = [
+      { id: 'minecraft', label: 'Minecraft Accounts' },
+      { id: 'cape', label: 'Minecraft Cape' },
+      { id: 'discord', label: 'Discord Nitro' },
+      { id: 'editing', label: 'Video Editing' },
+      { id: 'social', label: 'Social Media Growth' },
+      { id: 'dev', label: 'Bot & Development' },
+      { id: 'streaming', label: 'Netflix & Streaming' },
+      { id: 'gaming', label: 'Games & Wallet' }
+    ];
+
+    const DEFAULT_PRODUCTS = [
+      {
+        id: 'prod-mc-fa',
+        title: 'Minecraft Java & Bedrock Full Access',
+        category: 'minecraft',
+        priceBDT: 1500,
+        badge: 'Top Seller',
+        stock: 8,
+        isSoldOut: false,
+        features: ['Full Email & Password Changeable', 'Hypixel Server Unbanned', 'Java + Bedrock Edition Included', 'Lifetime Warranty Support'],
+        icon: '⛏️',
+        bgGradient: 'from-emerald-900/60 to-slate-950'
+      },
+      {
+        id: 'prod-capcut-pro',
+        title: 'CapCut Pro (PC & Mobile Version)',
+        category: 'editing',
+        priceBDT: 350,
+        badge: 'Top Seller',
+        stock: 15,
+        isSoldOut: false,
+        features: ['Full PC Version Unlocked', 'Cloud Storage Support', 'Premium Pro Effects & Transitions', '1 Year Official Warranty'],
+        icon: '🎬',
+        bgGradient: 'from-cyan-900/60 to-slate-950'
+      },
+      {
+        id: 'prod-nitro-3m-acc',
+        title: 'Discord Account (3 Month Nitro Loaded)',
+        category: 'discord',
+        priceBDT: 650,
+        badge: 'Full Access Account',
+        stock: 10,
+        isSoldOut: false,
+        features: ['Fresh Discord Account with Mail', '3 Months Nitro Boost Enabled', '2 Free Server Boosts Included', 'Instant Delivery Details'],
+        icon: '🚀',
+        bgGradient: 'from-indigo-900/60 to-slate-950'
+      },
+      {
+        id: 'prod-fb-followers',
+        title: 'Facebook Real Followers (1,000 Package)',
+        category: 'social',
+        priceBDT: 280,
+        badge: 'Non-Drop 100%',
+        stock: 50,
+        isSoldOut: false,
+        features: ['1,000 Real & Active Followers', 'Profile / Page Link Delivery (No Pass Required)', 'Non-Drop Lifetime Guarantee', 'Starts within 10-30 Mins'],
+        icon: '👥',
+        bgGradient: 'from-blue-900/60 to-slate-950'
+      },
+      {
+        id: 'prod-discord-bot',
+        title: 'Discord Bot Development (Custom Service)',
+        category: 'dev',
+        priceBDT: 1200,
+        badge: 'Custom Coded',
+        stock: 5,
+        isSoldOut: false,
+        features: ['Custom Economy, Ticket or Mod Bot', '24/7 Hosting Setup Support', 'Source Code Provided', 'Lifetime Rabbi Official Support'],
+        icon: '🤖',
+        bgGradient: 'from-purple-900/60 to-slate-950'
+      },
+      {
+        id: 'prod-nitro-1m',
+        title: 'Discord Nitro (2 Boosts) - 1 Month',
+        category: 'discord',
+        priceBDT: 420,
+        badge: 'Instant Link',
+        stock: 15,
+        isSoldOut: false,
+        features: ['2 Server Boosts Included', '500MB Upload & 4K Streaming', 'Works on Old & New Accounts', 'Direct Activation Gift Link'],
+        icon: '🚀',
+        bgGradient: 'from-indigo-900/60 to-slate-950'
+      },
+      {
+        id: 'prod-nitro-1yr',
+        title: 'Discord Nitro (2 Boosts) - 1 Year Full',
+        category: 'discord',
+        priceBDT: 3800,
+        badge: 'Big Savings',
+        stock: 4,
+        isSoldOut: false,
+        features: ['365 Days Full Guarantee', '24 Server Boosts Total', 'Fast Activation Service', 'Global Activation Key'],
+        icon: '💎',
+        bgGradient: 'from-purple-900/60 to-slate-950'
+      },
+      {
+        id: 'prod-netflix-1m',
+        title: 'Netflix Ultra HD 4K (1 Month Screen)',
+        category: 'streaming',
+        priceBDT: 320,
+        badge: 'Private PIN',
+        stock: 12,
+        isSoldOut: false,
+        features: ['4K Ultra HD Quality', 'Personal Profile PIN Lock', 'No Screen Sharing Buffer', '30 Days Full Replacement'],
+        icon: '🍿',
+        bgGradient: 'from-rose-900/60 to-slate-950'
+      },
+      {
+        id: 'prod-spotify-3m',
+        title: 'Spotify Premium Individual (3 Months)',
+        category: 'streaming',
+        priceBDT: 350,
+        badge: 'Ad-Free',
+        stock: 20,
+        isSoldOut: false,
+        features: ['Works on your own existing email', 'Zero Ads & Offline Download', 'Very High Quality Sound', 'Instant Delivery'],
+        icon: '🎵',
+        bgGradient: 'from-green-900/60 to-slate-950'
+      },
+      {
+        id: 'prod-steam-wallet',
+        title: 'Steam Wallet / Random AAA Game Key',
+        category: 'gaming',
+        priceBDT: 650,
+        badge: 'Global Key',
+        stock: 9,
+        isSoldOut: false,
+        features: ['Global Region Free Code', 'Redeem directly on Steam', 'Instant Delivery Key', '100% Genuine Digital Code'],
+        icon: '🎮',
+        bgGradient: 'from-blue-900/60 to-slate-950'
+      }
+    ];
+
+    const DEFAULT_REVIEWS = [
+      {
+        id: 'rev-1',
+        name: 'Tanvir Hossain',
+        product: 'Minecraft Java & Bedrock Full Access',
+        rating: 5,
+        type: 'good',
+        date: '10 Sep 2026',
+        comment: 'Rabbi bhai er service asolei fast! Order korar matro 7 minute-er moddhe WhatsApp-e delivery peyechi. Mail ebong password change kore felchi. 100% Trusted Bangla United!'
+      },
+      {
+        id: 'rev-2',
+        name: 'Saif Ahmed',
+        product: 'Discord Nitro (2 Boosts) - 1 Month',
+        rating: 5,
+        type: 'good',
+        date: '08 Sep 2026',
+        comment: 'Gift link ta instant kaj korlo. bKash send money korar por WhatsApp e boltei instant dilo. Best price in Rabbi Official Store.'
+      },
+      {
+        id: 'rev-3',
+        name: 'Mehedi Hasan',
+        product: 'CapCut Pro (PC & Mobile Version)',
+        rating: 5,
+        type: 'good',
+        date: '05 Sep 2026',
+        comment: 'CapCut PC version smoothly activate hoyeche. Very fast service!'
+      }
+    ];
+
+    const DEFAULT_SMP_CONFIG = {
+      badge: 'Rabbi Official Minecraft SMP',
+      ip: 'play.banglaunited.com',
+      status: '24/7 ONLINE'
+    };
+
+    let currentLang = 'banglish';
+    let products = [];
+    let orders = [];
+    let reviews = [];
+    let categories = [];
+    let smpConfig = DEFAULT_SMP_CONFIG;
+    let selectedProductId = '';
+    let orderQuantity = 1;
+    let isAdminAuthenticated = false;
+    let currentCategoryFilter = 'all';
+    let currentReviewFilter = 'all';
+    let brandClickCount = 0;
+    let brandClickTimer = null;
+    let currentMeSubTab = 'pending';
+    let activeTrackOrderId = null;
+    let animTimers = [];
+
+    const OWNER_WHATSAPP_NUMBER = '8801800000000';
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.altKey && (e.key === 'a' || e.key === 'A')) ||
+          (e.ctrlKey && e.shiftKey && (e.key === 'a' || e.key === 'A'))) {
+        e.preventDefault();
+        openAdminSecurityModal();
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('bangla_united_lang');
+      currentLang = savedLang === 'bangla' ? 'bangla' : 'banglish';
+      
+      if (sessionStorage.getItem('bangla_united_owner_auth') === 'true') {
+        isAdminAuthenticated = true;
+      }
+
+      loadStorageData();
+      applyLanguage(currentLang);
+      updateAdminVisibilityState();
+      renderAllViews();
+
+      initWelcomeGalaxy();
+      startWelcomeSequence();
+    });
+
+    /* WELCOME OVERLAY SCRIPT */
+    function initWelcomeGalaxy() {
+      const canvas = document.getElementById("welcomeGalaxyCanvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      let stars = [];
+      let shootingStars = [];
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener("resize", resize);
+
+      class Star {
+        constructor() { this.init(); }
+        init() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 0.4;
+          this.alpha = Math.random() * 0.7 + 0.3;
+          this.speed = Math.random() * 0.02 + 0.008;
+          this.color = ['#ffffff', '#e9d5ff', '#c084fc', '#38bdf8', '#fbcfe8'][Math.floor(Math.random() * 5)];
+        }
+        update() {
+          this.alpha += this.speed;
+          if (this.alpha > 1 || this.alpha < 0.2) this.speed = -this.speed;
+          this.y -= 0.18;
+          if (this.y < 0) this.y = canvas.height;
+        }
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = Math.max(0, this.alpha);
+          ctx.fillStyle = this.color;
+          ctx.shadowBlur = this.size * 3;
+          ctx.shadowColor = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      class ShootingStar {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * canvas.width * 1.2;
+          this.y = 0;
+          this.len = Math.random() * 80 + 40;
+          this.speed = Math.random() * 8 + 6;
+          this.size = Math.random() * 1.5 + 1;
+          this.alpha = 1;
+          this.active = false;
+        }
+        trigger() {
+          this.reset();
+          this.active = true;
+        }
+        update() {
+          if (!this.active) return;
+          this.x -= this.speed * 1.2;
+          this.y += this.speed;
+          this.alpha -= 0.025;
+          if (this.alpha <= 0 || this.y > canvas.height) {
+            this.active = false;
+          }
+        }
+        draw() {
+          if (!this.active) return;
+          ctx.save();
+          ctx.globalAlpha = Math.max(0, this.alpha);
+          ctx.strokeStyle = '#c084fc';
+          ctx.lineWidth = this.size;
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = '#38bdf8';
+          ctx.beginPath();
+          ctx.moveTo(this.x, this.y);
+          ctx.lineTo(this.x + this.len, this.y - this.len * 0.8);
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+
+      for (let i = 0; i < 90; i++) stars.push(new Star());
+      const shooter = new ShootingStar();
+      setInterval(() => { if (!shooter.active) shooter.trigger(); }, 3000);
+
+      function loop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        stars.forEach(s => { s.update(); s.draw(); });
+        shooter.update();
+        shooter.draw();
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+
+    function startWelcomeSequence() {
+      const palette1 = ['#38bdf8', '#818cf8', '#c084fc', '#f472b6', '#34d399', '#fbbf24', '#67e8f9'];
+      const palette2 = ['#f59e0b', '#fbbf24', '#fcd34d', '#f43f5e', '#ec4899', '#a855f7'];
+      const palette3 = ['#67e8f9', '#a5b4fc', '#c084fc', '#fbcfe8', '#6ee7b7', '#fde047', '#38bdf8'];
+
+      function chainTypeChar(elementId, text, colors, speed, onDone) {
+        const root = document.getElementById(elementId);
+        if (!root) return;
+        let idx = 0;
+
+        const beacon = document.createElement("span");
+        beacon.className = "welcome-beacon-dot";
+        root.appendChild(beacon);
+
+        function step() {
+          if (idx < text.length) {
+            const letter = text.charAt(idx);
+            const span = document.createElement("span");
+            span.className = "welcome-letter-item";
+            span.textContent = letter;
+            span.style.animationDelay = `${(idx * 0.08).toFixed(2)}s`;
+
+            const color = colors[idx % colors.length];
+            span.style.color = color;
+            span.style.textShadow = `0 0 12px ${color}, 0 2px 4px rgba(0,0,0,0.95)`;
+
+            root.insertBefore(span, beacon);
+            idx++;
+            setTimeout(step, speed);
+          } else {
+            beacon.remove();
+            if (onDone) onDone();
+          }
+        }
+        step();
+      }
+
+      chainTypeChar("welcomeTextLine1", "WELCOME TO BANGLA UNITED", palette1, 55, () => {
+        chainTypeChar("welcomeTextLine2", "FOUNDER: RABBI OFFICIAL", palette2, 45, () => {
+          chainTypeChar("welcomeTextLine3", "THANKS FOR VISITING MY WEBSITE FOR BANGLA UNITED", palette3, 25, () => {
+            setTimeout(() => {
+              const overlay = document.getElementById("siteEntryWelcomeOverlay");
+              if (overlay) {
+                overlay.classList.add("hide-welcome");
+              }
+            }, 2600);
+          });
+        });
+      });
+    }
+
+    /* MINECRAFT SMP COPY & ADMIN CONTROL */
+    function renderSmpBox() {
+      const badgeEl = document.getElementById('smpBoxBadgeText');
+      const ipEl = document.getElementById('smpDisplayIpText');
+      const statusEl = document.getElementById('smpStatusDisplay');
+
+      if (badgeEl) badgeEl.textContent = smpConfig.badge;
+      if (ipEl) ipEl.textContent = smpConfig.ip;
+      if (statusEl) statusEl.textContent = smpConfig.status;
+
+      const admBadge = document.getElementById('adminSmpBadgeInput');
+      const admIp = document.getElementById('adminSmpIpInput');
+      const admStatus = document.getElementById('adminSmpStatusInput');
+      if (admBadge) admBadge.value = smpConfig.badge;
+      if (admIp) admIp.value = smpConfig.ip;
+      if (admStatus) admStatus.value = smpConfig.status;
+    }
+
+    function copySmpServerIp() {
+      const ip = smpConfig.ip || 'play.banglaunited.com';
+      navigator.clipboard.writeText(ip).then(() => {
+        const btnText = document.getElementById('smpCopyBtnText');
+        const btnIcon = document.getElementById('smpCopyBtnIcon');
+        if (btnText) btnText.textContent = "COPIED!";
+        if (btnIcon) btnIcon.className = "ph-bold ph-check text-sm";
+        showToast(`SMP Server IP Copied: ${ip}`, 'success');
+
+        setTimeout(() => {
+          if (btnText) btnText.textContent = "Copy IP";
+          if (btnIcon) btnIcon.className = "ph-bold ph-copy text-sm";
+        }, 2200);
+      }).catch(() => {
+        showToast(`Server IP: ${ip}`, 'info');
+      });
+    }
+
+    function handleSaveSmpSettings(e) {
+      e.preventDefault();
+      const badge = document.getElementById('adminSmpBadgeInput').value.trim();
+      const ip = document.getElementById('adminSmpIpInput').value.trim();
+      const status = document.getElementById('adminSmpStatusInput').value.trim();
+
+      smpConfig = {
+        badge: badge || DEFAULT_SMP_CONFIG.badge,
+        ip: ip || DEFAULT_SMP_CONFIG.ip,
+        status: status || DEFAULT_SMP_CONFIG.status
+      };
+
+      localStorage.setItem('bangla_united_smp_config', JSON.stringify(smpConfig));
+      renderSmpBox();
+      showToast('SMP Server Settings Updated Successfully!', 'success');
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('bangla_united_lang', lang);
+      applyLanguage(lang);
+      renderAllViews();
+      showToast(lang === 'bangla' ? 'ভাষা পরিবর্তন করে বাংলা করা হয়েছে' : 'Language set to Banglish', 'info');
+    }
+
+    function applyLanguage(lang) {
+      const btnBanglish = document.getElementById('langBtn-banglish');
+      const btnBangla = document.getElementById('langBtn-bangla');
+
+      if (lang === 'bangla') {
+        btnBangla.className = 'px-2.5 py-1 sm:px-3 sm:py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 text-white bg-purple-600 shadow';
+        btnBanglish.className = 'px-2.5 py-1 sm:px-3 sm:py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 text-slate-400 hover:text-white';
+        document.body.classList.add('font-bengali');
+      } else {
+        btnBanglish.className = 'px-2.5 py-1 sm:px-3 sm:py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 text-white bg-purple-600 shadow';
+        btnBangla.className = 'px-2.5 py-1 sm:px-3 sm:py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 text-slate-400 hover:text-white';
+        document.body.classList.remove('font-bengali');
+      }
+
+      const dict = I18N[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict && dict[key]) {
+          el.innerHTML = dict[key];
+        }
+      });
+    }
+
+    function t(key) {
+      return (I18N[currentLang] && I18N[currentLang][key]) || key;
+    }
+
+    function loadStorageData() {
+      try {
+        const savedCats = localStorage.getItem('bangla_united_categories');
+        categories = savedCats ? JSON.parse(savedCats) : JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+      } catch (e) {
+        categories = JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+      }
+
+      try {
+        const savedProd = localStorage.getItem('bangla_united_products');
+        if (savedProd) {
+          products = JSON.parse(savedProd);
+          DEFAULT_PRODUCTS.forEach(dp => {
+            if (!products.some(p => p.id === dp.id)) {
+              products.push(dp);
+            }
+          });
+        } else {
+          products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+        }
+      } catch (e) {
+        products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+      }
+
+      const availableProd = products.find(p => !p.isSoldOut && p.stock > 0) || products[0];
+      if (availableProd) selectedProductId = availableProd.id;
+
+      try {
+        const savedOrders = localStorage.getItem('bangla_united_orders');
+        orders = savedOrders ? JSON.parse(savedOrders) : [];
+      } catch (e) {
+        orders = [];
+      }
+
+      try {
+        const savedRev = localStorage.getItem('bangla_united_reviews');
+        reviews = savedRev ? JSON.parse(savedRev) : JSON.parse(JSON.stringify(DEFAULT_REVIEWS));
+      } catch (e) {
+        reviews = [];
+      }
+
+      try {
+        const savedSmp = localStorage.getItem('bangla_united_smp_config');
+        smpConfig = savedSmp ? JSON.parse(savedSmp) : DEFAULT_SMP_CONFIG;
+      } catch (e) {
+        smpConfig = DEFAULT_SMP_CONFIG;
+      }
+    }
+
+    function saveCategories() {
+      localStorage.setItem('bangla_united_categories', JSON.stringify(categories));
+      renderCategoryButtons();
+      populateCategoryDropdown();
+    }
+
+    function saveProducts() {
+      localStorage.setItem('bangla_united_products', JSON.stringify(products));
+      renderAllViews();
+    }
+
+    function saveOrders() {
+      localStorage.setItem('bangla_united_orders', JSON.stringify(orders));
+      updateAdminBadges();
+      renderMeOrders();
+      if (isAdminAuthenticated) renderAdminOrdersTable();
+    }
+
+    function saveReviews() {
+      localStorage.setItem('bangla_united_reviews', JSON.stringify(reviews));
+      renderReviewsGrid();
+    }
+
+    function promptCreateNewCategory() {
+      const catName = prompt(currentLang === 'bangla' ? 'নতুন ক্যাটাগরির নাম লিখুন:' : 'Notun Category-r naam likhun:');
+      if (!catName || !catName.trim()) return;
+      const cleanName = catName.trim();
+      const catId = 'cat_' + cleanName.toLowerCase().replace(/[^a-z0-9]/g, '_');
+      categories.push({ id: catId, label: cleanName });
+      saveCategories();
+    }
+
+    function populateCategoryDropdown() {
+      const select = document.getElementById('editProductCategory');
+      if (!select) return;
+      select.innerHTML = categories.map(c => `<option value="${c.id}">${c.label}</option>`).join('');
+    }
+
+    function setQuickIcon(iconEmoji) {
+      const input = document.getElementById('editProductIcon');
+      if (input) input.value = iconEmoji;
+    }
+
+    function renderCategoryButtons() {
+      const container = document.getElementById('categoryFilterContainer');
+      if (!container) return;
+
+      let html = `
+        <button onclick="filterCategory('all')" id="catBtn-all" class="px-4 py-2 rounded-xl text-xs font-bold ${currentCategoryFilter === 'all' ? 'bg-purple-600 text-white border-purple-500/40' : 'bg-slate-900 text-slate-400 hover:text-white border-slate-800'} border transition-all">
+          <span>${t('catAll')}</span>
+        </button>
+      `;
+
+      categories.forEach(cat => {
+        if (cat.id === 'cape') return;
+        const isActive = currentCategoryFilter === cat.id;
+        html += `
+          <button onclick="filterCategory('${cat.id}')" id="catBtn-${cat.id}" class="px-4 py-2 rounded-xl text-xs font-bold ${isActive ? 'bg-purple-600 text-white border-purple-500/40' : 'bg-slate-900 text-slate-400 hover:text-white border-slate-800'} border transition-all whitespace-nowrap">
+            <span>${cat.label}</span>
+          </button>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function updateAdminVisibilityState() {
+      const headerLogoutBtn = document.getElementById('headerLogoutBtn');
+      if (isAdminAuthenticated) {
+        if (headerLogoutBtn) headerLogoutBtn.classList.remove('hidden');
+      } else {
+        if (headerLogoutBtn) headerLogoutBtn.classList.add('hidden');
+      }
+    }
+
+    function navigateTo(pageId) {
+      if (pageId === 'admin' && !isAdminAuthenticated) {
+        openAdminSecurityModal();
+        return;
+      }
+
+      document.querySelectorAll('.page-view').forEach(p => p.classList.add('hidden'));
+      const target = document.getElementById(`page-${pageId}`);
+      if (target) target.classList.remove('hidden');
+
+      document.querySelectorAll('.nav-item').forEach(btn => {
+        btn.classList.remove('bg-purple-600', 'text-white', 'shadow-md');
+        btn.classList.add('text-slate-300');
+      });
+      const activeNav = document.getElementById(`navBtn-${pageId}`);
+      if (activeNav) {
+        activeNav.classList.add('bg-purple-600', 'text-white', 'shadow-md');
+        activeNav.classList.remove('text-slate-300');
+      }
+
+      document.querySelectorAll('[id^="mNavBtn-"]').forEach(btn => {
+        btn.classList.remove('text-purple-400');
+        btn.classList.add('text-slate-400');
+      });
+      const activeMNav = document.getElementById(`mNavBtn-${pageId}`);
+      if (activeMNav) {
+        activeMNav.classList.remove('text-slate-400');
+        activeMNav.classList.add('text-purple-400');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (pageId === 'admin') {
+        renderAdminOrdersTable();
+        renderAdminInventoryTable();
+        renderSmpBox();
+      } else if (pageId === 'cape') {
+        renderCapeSlots();
+      } else if (pageId === 'me') {
+        renderMeOrders();
+      }
+    }
+
+    function renderAllViews() {
+      renderCategoryButtons();
+      populateCategoryDropdown();
+      renderSmpBox();
+      renderStockPageCards();
+      renderCapeSlots();
+      renderOrderPageSelection();
+      updateOrderCalculations();
+      renderReviewsGrid();
+      updateAdminBadges();
+      populateReviewProductOptions();
+      renderMeOrders();
+      if (isAdminAuthenticated) {
+        renderAdminOrdersTable();
+        renderAdminInventoryTable();
+      }
+    }
+
+    function renderStockPageCards() {
+      const container = document.getElementById('stockGridCards');
+      if (!container) return;
+
+      const nonCapeProducts = products.filter(p => p.category !== 'cape');
+      const filtered = currentCategoryFilter === 'all' 
+        ? nonCapeProducts 
+        : nonCapeProducts.filter(p => p.category === currentCategoryFilter);
+
+      const countText = currentLang === 'bangla' 
+        ? `লাইভ প্রোডাক্ট: ${filtered.length} টি` 
+        : `Live Items: ${filtered.length} Products`;
+      document.getElementById('stockTotalCountInfo').textContent = countText;
+
+      container.innerHTML = filtered.map(prod => {
+        const isSoldOut = prod.isSoldOut || prod.stock <= 0;
+        const catObj = categories.find(c => c.id === prod.category);
+        const catLabel = catObj ? catObj.label : prod.category;
+
+        return `
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group transition-all duration-300 ${isSoldOut ? 'opacity-75 border-rose-900/40' : 'hover:border-purple-500/60'}">
+            <div>
+              <div class="h-32 bg-gradient-to-br ${prod.bgGradient || 'from-purple-950 to-slate-950'} p-4 relative flex items-center justify-center overflow-hidden">
+                <span class="text-5xl select-none transform group-hover:scale-110 transition-transform duration-300">
+                  ${prod.icon || '📦'}
+                </span>
+                <div class="absolute top-3 left-3">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-black/60 backdrop-blur-md text-cyan-300 border border-cyan-500/30 font-mono">
+                    ${prod.badge || 'Official'}
+                  </span>
+                </div>
+                <div class="absolute top-3 right-3">
+                  ${isSoldOut ? `
+                    <span class="badge-soldout px-3 py-1 rounded-full text-[10px] font-black uppercase text-white">
+                      ${t('soldOutBadge')}
+                    </span>
+                  ` : `
+                    <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/90 text-white">
+                      Stock: ${prod.stock}
+                    </span>
+                  `}
+                </div>
+              </div>
+
+              <div class="p-5">
+                <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+                  <span class="uppercase font-bold text-purple-400">${catLabel}</span>
+                  <span class="${isSoldOut ? 'text-rose-400' : 'text-emerald-400'} font-bold">
+                    ${isSoldOut ? t('soldOutBadge') : t('inStockBadge')}
+                  </span>
+                </div>
+
+                <h3 class="text-base font-bold text-white group-hover:text-purple-300 transition-colors mb-3">
+                  ${prod.title}
+                </h3>
+
+                <ul class="space-y-1.5 mb-4">
+                  ${(prod.features || []).map(f => `
+                    <li class="flex items-start gap-1.5 text-xs text-slate-300">
+                      <i class="ph-bold ph-check text-emerald-400 text-sm shrink-0 mt-0.5"></i>
+                      <span>${f}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-5 pt-0 border-t border-slate-800/80 mt-auto">
+              <div class="flex items-baseline justify-between py-3">
+                <span class="text-2xl font-black font-mono text-white">৳ ${Number(prod.priceBDT).toLocaleString()}</span>
+                <span class="text-[11px] px-2.5 py-0.5 rounded-lg text-emerald-400 bg-emerald-950/50 border border-emerald-800/40">
+                  Instant Delivery
+                </span>
+              </div>
+
+              ${isSoldOut ? `
+                <button disabled class="w-full py-3 rounded-xl bg-slate-900 text-slate-500 font-bold text-xs cursor-not-allowed">
+                  ${t('stockSheshBtn')}
+                </button>
+              ` : `
+                <button onclick="quickOrderProduct('${prod.id}')" class="glow-btn w-full py-3 rounded-xl text-white font-extrabold text-xs flex items-center justify-center gap-2">
+                  <i class="ph-bold ph-shopping-bag"></i>
+                  <span>${t('orderNowBtnText')}</span>
+                  <i class="ph-bold ph-arrow-right"></i>
+                </button>
+              `}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderCapeSlots() {
+      const container = document.getElementById('capeSlotsGrid');
+      if (!container) return;
+
+      const capeProducts = products.filter(p => p.category === 'cape');
+      const countEl = document.getElementById('capeLiveStockCountText');
+      if (countEl) {
+        countEl.textContent = currentLang === 'bangla' 
+          ? `স্টকে আছে: ${capeProducts.length} টি কেভ` 
+          : `Stock Ache: ${capeProducts.length} Ti Cape`;
+      }
+
+      let slotsHTML = '';
+
+      capeProducts.forEach((cape, index) => {
+        const isSoldOut = cape.isSoldOut || cape.stock <= 0;
+        slotsHTML += `
+          <div class="glass-card rounded-2xl p-5 border border-amber-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 font-mono">
+                  SLOT #${index + 1}
+                </span>
+                <span class="text-[10px] font-bold ${isSoldOut ? 'text-rose-400' : 'text-emerald-400'}">
+                  ${isSoldOut ? 'SOLD OUT' : `Stock: ${cape.stock}`}
+                </span>
+              </div>
+
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-600/30 via-slate-900 to-purple-600/30 border border-amber-500/40 flex items-center justify-center text-3xl mx-auto mb-3 shadow-lg">
+                ${cape.icon || '🧊'}
+              </div>
+
+              <h4 class="text-sm font-bold text-white text-center mb-1">${cape.title}</h4>
+              <p class="text-[11px] text-center text-slate-400 mb-3">${cape.badge || 'Instant Delivery'}</p>
+
+              <div class="text-center font-mono font-black text-amber-400 text-lg mb-3">
+                ৳ ${Number(cape.priceBDT).toLocaleString()}
+              </div>
+            </div>
+
+            <div>
+              ${isSoldOut ? `
+                <button disabled class="w-full py-2.5 rounded-xl bg-slate-900 text-slate-500 text-xs font-bold cursor-not-allowed">
+                  ${t('stockSheshBtn')}
+                </button>
+              ` : `
+                <button onclick="quickOrderProduct('${cape.id}')" class="glow-btn w-full py-2.5 rounded-xl text-white text-xs font-bold flex items-center justify-center gap-1.5">
+                  <i class="ph-bold ph-shopping-bag"></i>
+                  <span>${t('orderNowBtnText')}</span>
+                </button>
+              `}
+            </div>
+          </div>
+        `;
+      });
+
+      const remainingSlots = Math.max(0, 10 - capeProducts.length);
+      for (let i = 1; i <= remainingSlots; i++) {
+        const slotNumber = capeProducts.length + i;
+        slotsHTML += `
+          <div class="rounded-2xl p-5 border border-dashed border-slate-800 bg-slate-950/40 flex flex-col items-center justify-center text-center min-h-[240px] hover:border-amber-500/30 transition-all">
+            <span class="text-xs font-mono text-slate-600 font-bold mb-2">SLOT #${slotNumber}</span>
+            <div class="w-14 h-14 rounded-2xl bg-slate-900/80 border border-slate-800 text-slate-600 flex items-center justify-center text-2xl mb-3 shadow-inner">
+              <i class="ph-bold ph-cube"></i>
+            </div>
+            <h5 class="text-xs font-bold text-slate-300 mb-1">${t('capeSlotEmptyTitle')}</h5>
+            <p class="text-[10px] text-slate-500 max-w-[170px] leading-relaxed">
+              ${t('capeSlotEmptyDesc')}
+            </p>
+          </div>
+        `;
+      }
+
+      container.innerHTML = slotsHTML;
+    }
+
+    function filterCategory(cat) {
+      currentCategoryFilter = cat;
+      renderCategoryButtons();
+      renderStockPageCards();
+    }
+
+    function quickOrderProduct(prodId) {
+      selectedProductId = prodId;
+      orderQuantity = 1;
+      navigateTo('order');
+      renderOrderPageSelection();
+      updateOrderCalculations();
+    }
+
+    function renderOrderPageSelection() {
+      const container = document.getElementById('orderProductSelectList');
+      if (!container) return;
+
+      container.innerHTML = products.map(prod => {
+        const isSoldOut = prod.isSoldOut || prod.stock <= 0;
+        const isSelected = prod.id === selectedProductId && !isSoldOut;
+
+        if (isSoldOut) {
+          return `
+            <div class="p-3.5 rounded-2xl border border-slate-800/80 bg-slate-950/40 opacity-40 cursor-not-allowed flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl filter grayscale">${prod.icon || '📦'}</span>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-400 line-clamp-1">${prod.title}</h4>
+                  <span class="text-[10px] font-bold text-rose-400 uppercase">${t('soldOutBadge')}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        return `
+          <div onclick="selectProductInOrderPage('${prod.id}')" class="cursor-pointer p-3.5 rounded-2xl border transition-all ${isSelected ? 'bg-purple-950/50 border-purple-500 ring-2 ring-purple-500/40 shadow-lg' : 'bg-slate-900/80 border-slate-800'}">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">${prod.icon || '📦'}</span>
+                <div>
+                  <h4 class="text-xs font-bold text-white line-clamp-1">${prod.title}</h4>
+                  <div class="text-[11px] font-mono font-bold text-cyan-300">৳ ${Number(prod.priceBDT).toLocaleString()}</div>
+                </div>
+              </div>
+              <div class="w-6 h-6 rounded-full flex items-center justify-center ${isSelected ? 'bg-purple-500 text-white' : 'border border-slate-600'}">
+                <i class="ph-bold ph-check text-xs"></i>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function selectProductInOrderPage(prodId) {
+      selectedProductId = prodId;
+      orderQuantity = 1;
+      renderOrderPageSelection();
+      updateOrderCalculations();
+    }
+
+    function adjustOrderQuantity(delta) {
+      orderQuantity = Math.max(1, orderQuantity + delta);
+      updateOrderCalculations();
+    }
+
+    function updateOrderCalculations() {
+      const prod = products.find(p => p.id === selectedProductId) || products[0];
+      if (!prod) return;
+      const total = Number(prod.priceBDT) * orderQuantity;
+      document.getElementById('summarySelectedTitle').textContent = `${prod.title} (x${orderQuantity})`;
+      document.getElementById('summaryUnitPrice').textContent = `৳ ${Number(prod.priceBDT).toLocaleString()}`;
+      document.getElementById('orderQuantityDisplay').textContent = orderQuantity;
+      document.getElementById('summaryTotalBill').textContent = `৳ ${total.toLocaleString()}`;
+      const paidInput = document.getElementById('custAmountPaid');
+      if (paidInput && !paidInput.value) paidInput.value = total;
+    }
+
+    function handleCustomerOrderSubmit(e) {
+      e.preventDefault();
+      const prod = products.find(p => p.id === selectedProductId);
+      if (!prod) return;
+
+      const orderId = 'BU-' + Math.floor(100000 + Math.random() * 900000);
+      const name = document.getElementById('custName').value.trim();
+      const whatsapp = document.getElementById('custWhatsApp').value.trim();
+      const discord = document.getElementById('custDiscord').value.trim() || 'N/A';
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+      const lastDigits = document.getElementById('custLastDigits').value.trim();
+      const amountPaid = Number(document.getElementById('custAmountPaid').value);
+      const note = document.getElementById('custExtraNote').value.trim() || 'N/A';
+
+      const newOrder = {
+        id: orderId,
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
+        name,
+        whatsapp,
+        discord,
+        productId: prod.id,
+        productTitle: prod.title,
+        qty: orderQuantity,
+        paymentMethod,
+        lastDigits,
+        totalBDT: Number(prod.priceBDT) * orderQuantity,
+        amountPaid,
+        note,
+        status: 'pending'
+      };
+
+      orders.unshift(newOrder);
+      saveOrders();
+
+      document.getElementById('modalSuccOrderId').textContent = '#' + orderId;
+      document.getElementById('modalSuccProduct').textContent = `${prod.title} (x${orderQuantity})`;
+      document.getElementById('modalSuccAmount').textContent = `৳ ${amountPaid.toLocaleString()}`;
+
+      const modal = document.getElementById('orderSuccessModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+
+      document.getElementById('customerOrderForm').reset();
+    }
+
+    function triggerOrderConfirmFlow() {
+      closeOrderSuccessModal();
+      if (orders.length > 0) {
+        openClientSubmissionAnimation(orders[0].id);
+      }
+    }
+
+    function openClientSubmissionAnimation(orderId) {
+      activeTrackOrderId = orderId;
+      const order = orders.find(o => o.id === orderId);
+      if (!order) return;
+
+      const modal = document.getElementById('deliveryTrackerModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+
+      document.getElementById('trackerModalOrderTitle').textContent = `Order #${order.id} - ${order.productTitle}`;
+
+      clearAllAnimTimers();
+      const drop = document.getElementById('animItemDrop');
+      const box = document.getElementById('animBox');
+      const packArea = document.getElementById('animPackArea');
+      const truck = document.getElementById('animTruck');
+      const door = document.getElementById('animTruckDoor');
+      const road = document.getElementById('animRoadStripes');
+      const house = document.getElementById('animHouse');
+      const parcel = document.getElementById('animDeliveredParcel');
+      const statusText = document.getElementById('trackerStatusLiveText');
+
+      drop.className = 'anim-item-drop';
+      box.className = 'anim-box';
+      box.style.transform = 'none';
+      box.style.opacity = '1';
+      packArea.style.display = 'flex';
+      truck.style.left = '-240px';
+      door.classList.remove('open');
+      truck.classList.remove('bouncing');
+      road.classList.remove('drive');
+      house.style.right = '-170px';
+      parcel.style.display = 'none';
+
+      statusText.textContent = "1. Product Box-e Pack Hocche...";
+      
+      animTimers.push(setTimeout(() => drop.classList.add('falling'), 300));
+      
+      animTimers.push(setTimeout(() => {
+        box.classList.add('closed');
+        animTimers.push(setTimeout(() => {
+          box.classList.add('taped');
+          statusText.textContent = "2. Box Sealed! Delivery Van Ashche...";
+        }, 400));
+      }, 1100));
+
+      animTimers.push(setTimeout(() => truck.style.left = '30%', 2000));
+
+      animTimers.push(setTimeout(() => {
+        door.classList.add('open');
+        animTimers.push(setTimeout(() => {
+          box.style.transform = 'scale(0.35) translate(-100px, -20px)';
+          box.style.opacity = '0';
+          
+          animTimers.push(setTimeout(() => {
+            door.classList.remove('open');
+            packArea.style.display = 'none';
+            statusText.textContent = "3. Gari Rastay Rowna Diyeche! Order Pending...";
+            road.classList.add('drive');
+            truck.classList.add('bouncing');
+
+            animTimers.push(setTimeout(() => {
+              closeDeliveryTrackerModal();
+              showToast("Order submit hoise! Owner confirm korle delivery hobe.", "info");
+            }, 2000));
+
+          }, 500));
+        }, 500));
+      }, 3100));
+    }
+
+    function closeOrderSuccessModal() {
+      const modal = document.getElementById('orderSuccessModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+    }
+
+    function switchMeSubTab(tab) {
+      currentMeSubTab = tab;
+      const btnPending = document.getElementById('meTabBtn-pending');
+      const btnConfirmed = document.getElementById('meTabBtn-confirmed');
+
+      if (tab === 'pending') {
+        btnPending.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-amber-500 text-slate-950 flex items-center gap-2 shadow-lg';
+        btnConfirmed.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:text-white flex items-center gap-2 border border-slate-800';
+      } else {
+        btnConfirmed.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-emerald-500 text-slate-950 flex items-center gap-2 shadow-lg';
+        btnPending.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:text-white flex items-center gap-2 border border-slate-800';
+      }
+      renderMeOrders();
+    }
+
+    function renderMeOrders() {
+      const container = document.getElementById('meOrdersListContainer');
+      const emptyState = document.getElementById('meOrdersEmptyState');
+      if (!container) return;
+
+      const pendingOrders = orders.filter(o => o.status === 'pending');
+      const confirmedOrders = orders.filter(o => o.status === 'confirmed' || o.status === 'delivered');
+
+      document.getElementById('meBadgePending').textContent = pendingOrders.length;
+      document.getElementById('meBadgeConfirmed').textContent = confirmedOrders.length;
+
+      const displayList = currentMeSubTab === 'pending' ? pendingOrders : confirmedOrders;
+
+      if (displayList.length === 0) {
+        container.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      container.innerHTML = displayList.map(order => {
+        const isPending = order.status === 'pending';
+        return `
+          <div class="glass-card rounded-2xl p-5 border ${isPending ? 'border-amber-500/40 bg-amber-950/10' : 'border-emerald-500/40 bg-emerald-950/10'} flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <span class="font-mono font-black text-white text-sm">#${order.id}</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${isPending ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'}">
+                  ${isPending ? (currentLang === 'bangla' ? 'পেন্ডিং (অপেক্ষমান)' : 'PENDING (Waiting)') : (currentLang === 'bangla' ? 'ডেলিভারি সম্পন্ন (Confirm)' : 'Delivery Shompurno (Confirm)')}
+                </span>
+              </div>
+              <h4 class="text-base font-bold text-white">${order.productTitle} (Qty: ${order.qty || 1})</h4>
+              <div class="text-xs text-slate-400 mt-1 flex items-center gap-3">
+                <span>Date: ${order.date}</span>
+                <span>Paid: <b class="text-amber-400">৳${order.amountPaid}</b></span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button onclick="openOrderDeliveryAnimation('${order.id}')" class="px-4 py-2.5 rounded-xl glow-btn text-white font-bold text-xs flex items-center gap-2 shadow-lg">
+                <i class="ph-bold ph-truck text-base"></i>
+                <span>${isPending ? (currentLang === 'bangla' ? 'লাইভ ট্র্যাকিং এনিমেশন' : 'Live Tracking Animation') : (currentLang === 'bangla' ? 'ডেলিভারি হিস্টোরি কনফার্ম' : 'Delivery History Confirm')}</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function clearAllAnimTimers() {
+      animTimers.forEach(t => clearTimeout(t));
+      animTimers = [];
+    }
+
+    function openOrderDeliveryAnimation(orderId) {
+      activeTrackOrderId = orderId;
+      const order = orders.find(o => o.id === orderId);
+      if (!order) return;
+
+      const modal = document.getElementById('deliveryTrackerModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+
+      document.getElementById('trackerModalOrderTitle').textContent = `Order #${order.id} - ${order.productTitle}`;
+
+      clearAllAnimTimers();
+      const drop = document.getElementById('animItemDrop');
+      const box = document.getElementById('animBox');
+      const packArea = document.getElementById('animPackArea');
+      const truck = document.getElementById('animTruck');
+      const door = document.getElementById('animTruckDoor');
+      const road = document.getElementById('animRoadStripes');
+      const house = document.getElementById('animHouse');
+      const parcel = document.getElementById('animDeliveredParcel');
+      const statusText = document.getElementById('trackerStatusLiveText');
+
+      drop.className = 'anim-item-drop';
+      box.className = 'anim-box';
+      box.style.transform = 'none';
+      box.style.opacity = '1';
+      packArea.style.display = 'none';
+      door.classList.remove('open');
+      parcel.style.display = 'none';
+
+      if (order.status === 'pending') {
+        truck.style.left = '35%';
+        truck.classList.add('bouncing');
+        road.classList.add('drive');
+        house.style.right = '-170px';
+        statusText.textContent = "Order Pending! Delivery Van Rastay Cholche (Owner Confirm-er Opekkhay)...";
+      } else {
+        road.classList.remove('drive');
+        truck.classList.remove('bouncing');
+        truck.style.left = '48%';
+        house.style.right = '40px';
+        parcel.style.display = 'block';
+        parcel.style.left = '515px';
+        statusText.textContent = "Order Confirmed! Box Delivery Complete at Doorstep.";
+      }
+    }
+
+    function closeDeliveryTrackerModal() {
+      clearAllAnimTimers();
+      const modal = document.getElementById('deliveryTrackerModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+    }
+
+    function handleBrandLogoClick() {
+      brandClickCount++;
+      clearTimeout(brandClickTimer);
+      if (brandClickCount >= 5) {
+        brandClickCount = 0;
+        openAdminSecurityModal();
+      } else {
+        brandClickTimer = setTimeout(() => { brandClickCount = 0; }, 1200);
+      }
+    }
+
+    function openAdminSecurityModal() {
+      if (isAdminAuthenticated) {
+        navigateTo('admin');
+      } else {
+        const modal = document.getElementById('adminLoginModal');
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+        const passInput = document.getElementById('adminPassInput');
+        if (passInput) {
+          passInput.value = '';
+          setTimeout(() => passInput.focus(), 150);
+        }
+      }
+    }
+
+    function closeAdminLoginModal() {
+      const modal = document.getElementById('adminLoginModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+    }
+
+    function handleAdminLoginSubmit(e) {
+      e.preventDefault();
+      const pass = document.getElementById('adminPassInput').value.trim();
+      if (pass === 'adminrabby') {
+        isAdminAuthenticated = true;
+        sessionStorage.setItem('bangla_united_owner_auth', 'true');
+        closeAdminLoginModal();
+        updateAdminVisibilityState();
+        navigateTo('admin');
+        showToast('Admin Mode Unlocked!', 'success');
+      } else {
+        showToast('Incorrect Password! Try again.', 'error');
+      }
+    }
+
+    function handleAdminLogout() {
+      isAdminAuthenticated = false;
+      sessionStorage.removeItem('bangla_united_owner_auth');
+      updateAdminVisibilityState();
+      navigateTo('stock');
+      showToast('Owner Mode Logged Out', 'info');
+    }
+
+    function switchAdminSubTab(tab) {
+      const secOrders = document.getElementById('admSection-orders');
+      const secInventory = document.getElementById('admSection-inventory');
+      const btnOrders = document.getElementById('admTabBtn-orders');
+      const btnInventory = document.getElementById('admTabBtn-inventory');
+
+      if (tab === 'orders') {
+        secOrders.classList.remove('hidden');
+        secInventory.classList.add('hidden');
+        btnOrders.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-purple-600 text-white flex items-center gap-2';
+        btnInventory.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:text-white flex items-center gap-2 border border-slate-800';
+        renderAdminOrdersTable();
+      } else {
+        secOrders.classList.add('hidden');
+        secInventory.classList.remove('hidden');
+        btnInventory.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-cyan-600 text-white flex items-center gap-2';
+        btnOrders.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:text-white flex items-center gap-2 border border-slate-800';
+        renderAdminInventoryTable();
+      }
+    }
+
+    function updateAdminBadges() {
+      const admBadge = document.getElementById('admBadgeOrders');
+      const admProdBadge = document.getElementById('admBadgeInventory');
+      if (admBadge) admBadge.textContent = orders.length;
+      if (admProdBadge) admProdBadge.textContent = products.length;
+    }
+
+    function renderAdminOrdersTable() {
+      const filter = document.getElementById('adminOrderStatusFilter').value;
+      const tbody = document.getElementById('adminOrdersTableBody');
+      const emptyBox = document.getElementById('adminOrdersEmptyNotice');
+
+      document.getElementById('statOrdersTotal').textContent = orders.length;
+      document.getElementById('statOrdersPending').textContent = orders.filter(o => o.status === 'pending').length;
+      document.getElementById('statOrdersDelivered').textContent = orders.filter(o => o.status === 'delivered' || o.status === 'confirmed').length;
+      
+      const totalRev = orders.filter(o => o.status !== 'rejected').reduce((sum, o) => sum + (Number(o.totalBDT) || 0), 0);
+      document.getElementById('statOrdersRevenue').textContent = `৳ ${totalRev.toLocaleString()}`;
+
+      const filtered = orders.filter(o => filter === 'all' ? true : o.status === filter);
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = '';
+        emptyBox.classList.remove('hidden');
+        return;
+      }
+
+      emptyBox.classList.add('hidden');
+      tbody.innerHTML = filtered.map(order => `
+        <tr class="hover:bg-slate-800/40 transition-colors">
+          <td class="py-3.5 px-4 font-mono font-bold text-white">
+            #${order.id}
+            <div class="text-[10px] text-slate-500 font-normal mt-0.5">${order.date}</div>
+          </td>
+          <td class="py-3.5 px-4">
+            <div class="font-bold text-white">${order.name}</div>
+            <div class="text-[11px] text-emerald-400 font-mono">${order.whatsapp}</div>
+          </td>
+          <td class="py-3.5 px-4">
+            <div class="font-bold text-slate-200">${order.productTitle}</div>
+            <div class="text-[11px] text-slate-400">Qty: ${order.qty || 1}</div>
+          </td>
+          <td class="py-3.5 px-4 text-slate-300 font-mono">
+            ${order.paymentMethod} (Last: <b>${order.lastDigits}</b>)
+          </td>
+          <td class="py-3.5 px-4 text-amber-400 font-mono font-bold">
+            ৳${order.amountPaid}
+          </td>
+          <td class="py-3.5 px-4">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${order.status === 'pending' ? 'bg-amber-500/20 text-amber-300' : 'bg-emerald-500/20 text-emerald-300'}">
+              ${order.status}
+            </span>
+          </td>
+          <td class="py-3.5 px-4 text-right">
+            ${order.status === 'pending' ? `
+              <button onclick="confirmOrderByAdmin('${order.id}')" class="px-2.5 py-1 rounded bg-emerald-600 text-white font-bold text-xs">Confirm</button>
+            ` : `
+              <button onclick="openOrderDeliveryAnimation('${order.id}')" class="px-2.5 py-1 rounded bg-purple-600 text-white font-bold text-xs">Animation</button>
+            `}
+            <button onclick="deleteOrder('${order.id}')" class="p-1.5 ml-1 rounded bg-slate-800 hover:bg-rose-600 text-slate-400 hover:text-white transition-colors">
+              <i class="ph-bold ph-trash"></i>
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function confirmOrderByAdmin(orderId) {
+      const o = orders.find(ord => ord.id === orderId);
+      if (o) {
+        o.status = 'confirmed';
+        saveOrders();
+        showToast(`Order #${orderId} confirmed successfully!`, 'success');
+      }
+    }
+
+    function deleteOrder(orderId) {
+      if (confirm(`Are you sure you want to delete order #${orderId}?`)) {
+        orders = orders.filter(o => o.id !== orderId);
+        saveOrders();
+        showToast(`Order #${orderId} deleted.`);
+      }
+    }
+
+    function renderAdminInventoryTable() {
+      const tbody = document.getElementById('adminInventoryTableBody');
+      if (!tbody) return;
+
+      tbody.innerHTML = products.map(p => `
+        <tr class="hover:bg-slate-800/40 transition-colors">
+          <td class="py-3 px-4">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">${p.icon || '📦'}</span>
+              <div class="font-bold text-white">${p.title}</div>
+            </div>
+          </td>
+          <td class="py-3 px-4 uppercase text-purple-300 font-mono text-[11px]">${p.category}</td>
+          <td class="py-3 px-4">
+            <input type="number" value="${p.priceBDT}" onchange="inlineUpdatePrice('${p.id}', this.value)" class="w-20 bg-slate-950 border border-slate-700 rounded px-2 py-1 text-xs font-mono font-bold text-amber-300">
+          </td>
+          <td class="py-3 px-4 font-mono">${p.stock}</td>
+          <td class="py-3 px-4">
+            <button onclick="toggleProductSoldOutStatus('${p.id}')" class="px-2.5 py-1 rounded-lg text-xs font-bold ${p.isSoldOut ? 'bg-rose-950 text-rose-300 border border-rose-600' : 'bg-emerald-950 text-emerald-300 border border-emerald-600'}">
+              ${p.isSoldOut ? 'SOLD OUT' : 'IN STOCK'}
+            </button>
+          </td>
+          <td class="py-3 px-4 text-right">
+            <button onclick="openEditProductModal('${p.id}')" class="p-1.5 rounded bg-cyan-600/20 text-cyan-400 hover:bg-cyan-600 hover:text-white transition-colors mr-1" title="Edit">
+              <i class="ph-bold ph-pencil-simple"></i>
+            </button>
+            <button onclick="deleteProductFromInventory('${p.id}')" class="p-1.5 rounded bg-rose-600/20 text-rose-400 hover:bg-rose-600 hover:text-white transition-colors" title="Delete Product">
+              <i class="ph-bold ph-trash"></i>
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function toggleProductSoldOutStatus(prodId) {
+      const p = products.find(prod => prod.id === prodId);
+      if (!p) return;
+      p.isSoldOut = !p.isSoldOut;
+      saveProducts();
+    }
+
+    function inlineUpdatePrice(prodId, newPrice) {
+      const p = products.find(prod => prod.id === prodId);
+      if (!p) return;
+      p.priceBDT = Number(newPrice);
+      saveProducts();
+      showToast(`${p.title} price updated.`);
+    }
+
+    function deleteProductFromInventory(prodId) {
+      const p = products.find(prod => prod.id === prodId);
+      if (!p) return;
+
+      if (confirm(`Are you sure you want to delete "${p.title}"?`)) {
+        products = products.filter(prod => prod.id !== prodId);
+        saveProducts();
+        showToast(`"${p.title}" successfully deleted!`, 'success');
+      }
+    }
+
+    function restoreDefaultProducts() {
+      if (confirm('Restore default products and categories?')) {
+        products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+        categories = JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+        saveCategories();
+        saveProducts();
+        showToast('Default products restored.', 'success');
+      }
+    }
+
+    function renderReviewsGrid() {
+      const container = document.getElementById('reviewsListGrid');
+      if (!container) return;
+
+      const filtered = reviews.filter(r => {
+        if (currentReviewFilter === 'all') return true;
+        return r.type === currentReviewFilter;
+      });
+
+      container.innerHTML = filtered.map(rev => `
+        <div class="glass-card rounded-2xl p-5 border border-purple-500/20 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <div class="text-amber-400 text-sm">${'★'.repeat(rev.rating)}</div>
+              <span class="text-xs text-slate-500">${rev.date}</span>
+            </div>
+            <p class="text-xs text-slate-200 mb-3">"${rev.comment}"</p>
+          </div>
+          <div class="font-bold text-white text-xs">${rev.name}</div>
+        </div>
+      `).join('');
+    }
+
+    function filterReviews(type) {
+      currentReviewFilter = type;
+      renderReviewsGrid();
+    }
+
+    function populateReviewProductOptions() {
+      const select = document.getElementById('revInputProduct');
+      if (!select) return;
+      select.innerHTML = products.map(p => `<option value="${p.title}">${p.title}</option>`).join('');
+    }
+
+    function openReviewModal() {
+      populateReviewProductOptions();
+      const modal = document.getElementById('reviewAddModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+    }
+
+    function closeReviewModal() {
+      const modal = document.getElementById('reviewAddModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+    }
+
+    function handleReviewSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('revInputName').value.trim();
+      const product = document.getElementById('revInputProduct').value;
+      const rating = Number(document.getElementById('revInputRating').value);
+      const type = document.getElementById('revInputType').value;
+      const comment = document.getElementById('revInputComment').value.trim();
+
+      reviews.unshift({
+        id: 'rev-' + Date.now(),
+        name, product, rating, type,
+        date: new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' }),
+        comment
+      });
+
+      saveReviews();
+      closeReviewModal();
+      showToast('Review submitted successfully!');
+    }
+
+    function openAddProductModal() {
+      populateCategoryDropdown();
+      document.getElementById('productEditForm').reset();
+      document.getElementById('editProductId').value = '';
+      document.getElementById('editProductIsAvailable').checked = true;
+      const modal = document.getElementById('productEditModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+    }
+
+    function openAddCapeModal() {
+      populateCategoryDropdown();
+      document.getElementById('productEditForm').reset();
+      document.getElementById('editProductId').value = '';
+      document.getElementById('editProductCategory').value = 'cape';
+      document.getElementById('editProductTitle').value = 'Minecraft Exclusive Cape';
+      document.getElementById('editProductPrice').value = '850';
+      document.getElementById('editProductStock').value = '5';
+      document.getElementById('editProductIsAvailable').checked = true;
+      const modal = document.getElementById('productEditModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+    }
+
+    function openEditProductModal(prodId) {
+      populateCategoryDropdown();
+      const p = products.find(prod => prod.id === prodId);
+      if (!p) return;
+
+      document.getElementById('editProductId').value = p.id;
+      document.getElementById('editProductIcon').value = p.icon || '📦';
+      document.getElementById('editProductCategory').value = p.category;
+      document.getElementById('editProductTitle').value = p.title;
+      document.getElementById('editProductPrice').value = p.priceBDT;
+      document.getElementById('editProductStock').value = p.stock;
+      document.getElementById('editProductBadge').value = p.badge || '';
+      document.getElementById('editProductIsAvailable').checked = !p.isSoldOut;
+      document.getElementById('editProductFeatures').value = (p.features || []).join(', ');
+
+      const modal = document.getElementById('productEditModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById('productEditModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+    }
+
+    function handleProductSaveSubmit(e) {
+      e.preventDefault();
+      const prodId = document.getElementById('editProductId').value;
+      const title = document.getElementById('editProductTitle').value.trim();
+      const category = document.getElementById('editProductCategory').value;
+      const priceBDT = Number(document.getElementById('editProductPrice').value);
+      const stock = Number(document.getElementById('editProductStock').value);
+      const icon = document.getElementById('editProductIcon').value.trim() || '📦';
+      const badge = document.getElementById('editProductBadge').value.trim() || 'Active';
+      const isAvailable = document.getElementById('editProductIsAvailable').checked;
+      const features = (document.getElementById('editProductFeatures').value || '').split(',').map(f => f.trim()).filter(Boolean);
+
+      if (prodId) {
+        const p = products.find(prod => prod.id === prodId);
+        if (p) {
+          p.title = title;
+          p.category = category;
+          p.priceBDT = priceBDT;
+          p.stock = stock;
+          p.icon = icon;
+          p.badge = badge;
+          p.isSoldOut = !isAvailable || stock <= 0;
+          p.features = features.length ? features : ['Instant Delivery', '100% Safe'];
+        }
+        showToast('Product updated successfully!');
+      } else {
+        products.push({
+          id: 'prod-' + Date.now(),
+          title, category, priceBDT, stock, icon,
+          badge,
+          isSoldOut: !isAvailable || stock <= 0,
+          features: features.length ? features : ['Instant Delivery', '100% Safe']
+        });
+        showToast('New product added successfully!');
+      }
+
+      saveProducts();
+      closeProductModal();
+    }
+
+    function showToast(msg, type = 'info') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'p-3 rounded-xl bg-[#0d1322] border border-cyan-500/50 text-white text-xs shadow-2xl';
+      toast.textContent = msg;
+      container.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+  </script>
+</body>
+</html>
